@@ -40,7 +40,7 @@ onMounted(() => {
       <!--nav lateral-->
 
       <div :class="['nav-menu-lateral', { active: isMenuActive }]">
-        <h1 class="logo-img-lateral">VG</h1>
+        <img src="/src/assets/imagens/logo.png" alt="logo" class="logolat">
 
         <i class="fas fa-times fa-2x" @click="toggleMenu"></i>
 
@@ -62,7 +62,7 @@ onMounted(() => {
 
       <!--nav bar-->
 
-      <h1 class="logo-img">VG</h1>
+      <img src="/src/assets/imagens/logo.png" alt="logo" class="logo">
 
       <ul class="nav-menu">
         <li class="nav-item">
@@ -120,6 +120,16 @@ header {
   top: 0;
   left: 0;
   width: 100%;
+}
+
+.logo {
+  width: 15vh;
+  height: 15vh;
+}
+.logolat {
+  width: 15vh;
+  height: 15vh;
+  margin-right: 50vh
 }
 
 .nav-1 {
@@ -216,7 +226,7 @@ header {
   list-style: none;
   gap: 3rem;
   justify-content: center;
-  margin-left: 100px;
+  margin-left: 250px;
 }
 
 .nav-link {
@@ -308,6 +318,11 @@ header {
 
 @media (max-width: 1200px) {
 
+.logo {
+  width: 12vh;
+  height: 12vh;
+}
+
 .search-container-Desk {
   display: none;
 }
@@ -361,6 +376,9 @@ header {
   display: none
 }
 
+.nav-menu-lateral {
+  display: none;
+}
 
 }
 
