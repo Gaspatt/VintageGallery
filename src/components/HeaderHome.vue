@@ -11,8 +11,8 @@ function toggleMenu() {
 
 // Monitora o scroll para controlar a opacidade do nav
 function handleScroll() {
-  const h3Element = document.querySelector('h3');
-  if (window.scrollY > h3Element.offsetTop - 100) {
+  const h1Element = document.querySelector('h1');
+  if (window.scrollY > h1Element.offsetTop - 100) {
     isTransparent.value = false;
   } else {
     isTransparent.value = true;
@@ -102,7 +102,7 @@ onMounted(() => {
 
     <!--nav de baixo-->
 
-    <div class="nav-2">
+    <div :class="['nav-2', { transparent: isTransparent }]">
       <!--pesquisa-->
       <div class="search-container-Mob">
         <input class="search" type="text" placeholder="Search...">
@@ -120,12 +120,14 @@ header {
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 1000;
 }
 
 .logo {
   width: 15vh;
   height: 15vh;
 }
+
 .logolat {
   width: 15vh;
   height: 15vh;
@@ -138,7 +140,7 @@ header {
   background-color: #000;
   height: 50px;
   padding: 20px;
-  transition: 0.3s;
+  transition: 1s;
 }
 
 .logo-img {
@@ -216,7 +218,7 @@ header {
 /*nav de baixo*/
 
 .nav-2 {
-  background-color: #383737;
+  background-color: #292828;
   padding: 10px;
   transition: 0.3s;
 }
@@ -226,7 +228,7 @@ header {
   list-style: none;
   gap: 3rem;
   justify-content: center;
-  margin-left: 250px;
+  margin-left: 120px;
 }
 
 .nav-link {
@@ -358,10 +360,6 @@ header {
   height: 50px;
 }
 
-.nav-1.transparent {
-  background-color: #000000;
-}
-
 }
 
 /*desktop*/
@@ -380,7 +378,12 @@ header {
   display: none;
 }
 
+.nav-1.transparent,
+.nav-2.transparent {
+  background-color: transparent;
 }
+}
+
 
 
 
