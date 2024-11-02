@@ -40,7 +40,8 @@ onMounted(() => {
       <!--nav lateral-->
 
       <div :class="['nav-menu-lateral', { active: isMenuActive }]">
-        <img src="/src/assets/imagens/logo.png" alt="logo" class="logolat">
+
+        <img src="/src/assets/imagens/logo.png" alt="logo" class="logo-img-lateral">
 
         <i class="fas fa-times fa-2x" @click="toggleMenu"></i>
 
@@ -62,7 +63,7 @@ onMounted(() => {
 
       <!--nav bar-->
 
-      <img src="/src/assets/imagens/logo.png" alt="logo" class="logo">
+      <img src="/src/assets/imagens/logo.png" alt="logo" class="logo-img">
 
       <ul class="nav-menu">
         <li class="nav-item">
@@ -123,17 +124,6 @@ header {
   z-index: 1000;
 }
 
-.logo {
-  width: 15vh;
-  height: 15vh;
-}
-
-.logolat {
-  width: 15vh;
-  height: 15vh;
-  margin-right: 50vh
-}
-
 .nav-1 {
   display: flex;
   align-items: center;
@@ -145,13 +135,9 @@ header {
 
 .logo-img {
   color: #fff;
-  width: 60px;
-  height: 70px;
-  margin-left: 15px;
-  margin-top: 15px;
-
+  width: 90px;
+  height: 90px;
 }
-
 
 .btn {
   font-weight: bold;
@@ -256,13 +242,7 @@ header {
 
 /*nav lateral hambuguer*/
 
-.logo-img-lateral {
-  color: rgb(255, 255, 255);
-  display: flex;
-  margin-top: 15px;
-  margin-left: 20px;
-  font-size: 30px;
-}
+
 
 .bar {
   display: block;
@@ -293,6 +273,12 @@ header {
   margin-top: 50px;
 }
 
+.logo-img-lateral {
+  width: 80px;
+  height: 80px;
+  display: flex;
+}
+
 
 .nav-menu-lateral i {
   position: absolute;
@@ -320,10 +306,7 @@ header {
 
 @media (max-width: 1200px) {
 
-.logo {
-  width: 12vh;
-  height: 12vh;
-}
+
 
 .search-container-Desk {
   display: none;
@@ -354,10 +337,9 @@ header {
 }
 
 .logo-img {
-  margin-left: 30px;
-  margin-top: 3px;
-  width: 50px;
-  height: 50px;
+  margin-left: 10px;
+  width: 70px;
+  height: 70px;
 }
 
 }

@@ -75,8 +75,22 @@ main {
   max-width: 500px;
 }
 
+@media (max-width: 700px) {
+  .homeback h1 {
+  color: #ffffff;
+  font-size: 20pt;
+}
+
+.homeback p {
+  color: #fff;
+  font-size: 10pt;
+}
+}
+
 
 /*ANIMAÇÃO*/
+
+
 
 
 @keyframes slideUp {
