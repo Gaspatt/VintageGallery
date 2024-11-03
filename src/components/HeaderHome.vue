@@ -5,6 +5,8 @@ import { ref, onMounted } from 'vue';
 const isMenuActive = ref(false);
 const isTransparent = ref(true);
 
+// função do menu hamburguer
+
 function toggleMenu() {
   isMenuActive.value = !isMenuActive.value;
 }
@@ -26,6 +28,8 @@ onMounted(() => {
 </script>
 
 <template>
+
+  <!--HEADER-->
 
   <header>
     <div :class="['nav-1', { transparent: isTransparent }]">
@@ -116,6 +120,8 @@ onMounted(() => {
 
 <style scoped>
 
+/*header fixo*/
+
 header {
   position: fixed;
   top: 0;
@@ -123,6 +129,8 @@ header {
   width: 100%;
   z-index: 1000;
 }
+
+/*nav de cima*/
 
 .nav-1 {
   display: flex;
@@ -133,11 +141,15 @@ header {
   transition: 1s;
 }
 
+/*logo*/
+
 .logo-img {
   color: #fff;
   width: 90px;
   height: 90px;
 }
+
+/*botão*/
 
 .btn {
   font-weight: bold;
@@ -154,12 +166,15 @@ header {
   background-color: #acabab;
 }
 
+
 .elementos {
   display: flex;
   margin-left: auto;
   align-items: center;
   gap: 20px;
 }
+
+/* barra de pesquisa */
 
 .search-container-Desk {
   position: relative;
@@ -177,11 +192,12 @@ header {
   box-sizing: border-box;
 }
 
+/*icon barra de pesquisa*/
+
 .search-icon {
   position: absolute;
   left: 10px;
   top: 6px;
-
   color: #888;
   pointer-events: none;
 }
@@ -189,6 +205,8 @@ header {
 .search:hover {
   background-color: #f1f1f1;
 }
+
+/*icon de favoritos*/
 
 .favorite-icon {
   font-size: 20px;
@@ -225,6 +243,8 @@ header {
 
 }
 
+/* afeter e hover*/
+
 .nav-link::after {
   content: '';
   position: absolute;
@@ -242,8 +262,6 @@ header {
 
 /*nav lateral hambuguer*/
 
-
-
 .bar {
   display: block;
   width: 25px;
@@ -254,6 +272,8 @@ header {
   transition: all 0.3s ease-in-out;
 }
 
+/*hamburguer*/
+
 .hamburguer {
   display: none;
   cursor: pointer;
@@ -263,11 +283,14 @@ header {
   left: 0
 }
 
+/* nav bar*/
+
 .nav-link-mobile {
   text-decoration: none;
   color: #ffffff;
   transition: 0.3s;
 }
+
 
 .nav-item-mobile {
   margin-top: 50px;
@@ -303,9 +326,10 @@ header {
 
 }
 
+/*responsividade*/
+
 
 @media (max-width: 1200px) {
-
 
 
 .search-container-Desk {
@@ -365,9 +389,6 @@ header {
   background-color: transparent;
 }
 }
-
-
-
 
 
 

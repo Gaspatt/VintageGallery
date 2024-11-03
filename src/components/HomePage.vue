@@ -10,7 +10,7 @@
           </div>
 
         </div>
-    </section>
+  </section>
   <main>
 
     <div class="teste">fkasjdk fkasjdfk kfjaskd</div>
@@ -18,13 +18,22 @@
 </template>
 
 <style scoped>
+
+/*section img */
+
+#secback {
+    background: url(/src/assets/imagens/homeback.png);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    height: 100vh;
+}
+
+/* div img*/
+
 .homeback {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  position: sticky;
-  top: 0;
-  z-index: 1;
   width: 100%;
   max-width: 100%;
   height: 100vh;
@@ -32,6 +41,8 @@
   box-sizing: border-box;
   overflow: hidden;
 }
+
+/* titulo e textos homeback */
 
 .homeback h1 {
   color: #fff;
@@ -44,38 +55,17 @@
   font-size: 15pt;
 }
 
-#secback {
-    margin: 0;
-    border-radius: 0;
-    background: url(/src/assets/imagens/homeback.png);
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    height: 100vh;
-}
-
-.homeback img {
-  width: 100%;
-  height: 60%;
-
-}
-
-main {
-  /* position: sticky; */
-  top: 0;
-}
-
-.teste {
-  height: 500px;
-}
-
-
 .txt {
   color: #fff;
   max-width: 500px;
 }
 
+/*responsividade*/
+
 @media (max-width: 700px) {
+
+  /*alteração nos textos responsive*/
+
   .homeback h1 {
   color: #ffffff;
   font-size: 20pt;
@@ -87,11 +77,7 @@ main {
 }
 }
 
-
 /*ANIMAÇÃO*/
-
-
-
 
 @keyframes slideUp {
   0% {
@@ -116,12 +102,18 @@ main {
   }
 }
 
+/*aplicação da animação*/
+
 .homeback h1 {
   animation: slideUp 2s ease-out;
 }
 
 .homeback p {
   animation: slideUp 2.5s ease-out;
+}
+
+.teste {
+  height: 400px;
 }
 
 </style>
