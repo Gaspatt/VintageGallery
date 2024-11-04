@@ -5,14 +5,16 @@ import { ref, onMounted } from 'vue';
 const isMenuActive = ref(false);
 const isTransparent = ref(true);
 
+// função do menu hamburguer
+
 function toggleMenu() {
   isMenuActive.value = !isMenuActive.value;
 }
 
 // Monitora o scroll para controlar a opacidade do nav
 function handleScroll() {
-  const h3Element = document.querySelector('h3');
-  if (window.scrollY > h3Element.offsetTop - 100) {
+  const h1Element = document.querySelector('h1');
+  if (window.scrollY > h1Element.offsetTop - 100) {
     isTransparent.value = false;
   } else {
     isTransparent.value = true;
@@ -27,6 +29,8 @@ onMounted(() => {
 
 <template>
 
+  <!--HEADER-->
+
   <header>
     <div :class="['nav-1', { transparent: isTransparent }]">
 
@@ -40,7 +44,8 @@ onMounted(() => {
       <!--nav lateral-->
 
       <div :class="['nav-menu-lateral', { active: isMenuActive }]">
-        <img src="/src/assets/imagens/logo.png" alt="logo" class="logolat">
+
+        <img src="/src/assets/imagens/logo.png" alt="logo" class="logo-img-lateral">
 
         <i class="fas fa-times fa-2x" @click="toggleMenu"></i>
 
@@ -62,7 +67,7 @@ onMounted(() => {
 
       <!--nav bar-->
 
-      <img src="/src/assets/imagens/logo.png" alt="logo" class="logo">
+      <img src="/src/assets/imagens/logo.png" alt="logo" class="logo-img">
 
       <ul class="nav-menu">
         <li class="nav-item">
@@ -102,7 +107,7 @@ onMounted(() => {
 
     <!--nav de baixo-->
 
-    <div class="nav-2">
+    <div :class="['nav-2', { transparent: isTransparent }]">
       <!--pesquisa-->
       <div class="search-container-Mob">
         <input class="search" type="text" placeholder="Search...">
@@ -115,22 +120,17 @@ onMounted(() => {
 
 <style scoped>
 
+/*header fixo*/
+
 header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 1000;
 }
 
-.logo {
-  width: 15vh;
-  height: 15vh;
-}
-.logolat {
-  width: 15vh;
-  height: 15vh;
-  margin-right: 50vh
-}
+/*nav de cima*/
 
 .nav-1 {
   display: flex;
@@ -138,18 +138,18 @@ header {
   background-color: #000;
   height: 50px;
   padding: 20px;
-  transition: 0.3s;
+  transition: 1s;
 }
+
+/*logo*/
 
 .logo-img {
   color: #fff;
-  width: 60px;
-  height: 70px;
-  margin-left: 15px;
-  margin-top: 15px;
-
+  width: 90px;
+  height: 90px;
 }
 
+/*botão*/
 
 .btn {
   font-weight: bold;
@@ -166,12 +166,15 @@ header {
   background-color: #acabab;
 }
 
+
 .elementos {
   display: flex;
   margin-left: auto;
   align-items: center;
   gap: 20px;
 }
+
+/* barra de pesquisa */
 
 .search-container-Desk {
   position: relative;
@@ -189,11 +192,12 @@ header {
   box-sizing: border-box;
 }
 
+/*icon barra de pesquisa*/
+
 .search-icon {
   position: absolute;
   left: 10px;
   top: 6px;
-
   color: #888;
   pointer-events: none;
 }
@@ -201,6 +205,8 @@ header {
 .search:hover {
   background-color: #f1f1f1;
 }
+
+/*icon de favoritos*/
 
 .favorite-icon {
   font-size: 20px;
@@ -216,7 +222,7 @@ header {
 /*nav de baixo*/
 
 .nav-2 {
-  background-color: #383737;
+  background-color: #292828;
   padding: 10px;
   transition: 0.3s;
 }
@@ -226,7 +232,7 @@ header {
   list-style: none;
   gap: 3rem;
   justify-content: center;
-  margin-left: 250px;
+  margin-left: 120px;
 }
 
 .nav-link {
@@ -236,6 +242,8 @@ header {
   padding: 3px;
 
 }
+
+/* afeter e hover*/
 
 .nav-link::after {
   content: '';
@@ -254,14 +262,6 @@ header {
 
 /*nav lateral hambuguer*/
 
-.logo-img-lateral {
-  color: rgb(255, 255, 255);
-  display: flex;
-  margin-top: 15px;
-  margin-left: 20px;
-  font-size: 30px;
-}
-
 .bar {
   display: block;
   width: 25px;
@@ -272,6 +272,8 @@ header {
   transition: all 0.3s ease-in-out;
 }
 
+/*hamburguer*/
+
 .hamburguer {
   display: none;
   cursor: pointer;
@@ -281,14 +283,23 @@ header {
   left: 0
 }
 
+/* nav bar*/
+
 .nav-link-mobile {
   text-decoration: none;
   color: #ffffff;
   transition: 0.3s;
 }
 
+
 .nav-item-mobile {
   margin-top: 50px;
+}
+
+.logo-img-lateral {
+  width: 80px;
+  height: 80px;
+  display: flex;
 }
 
 
@@ -315,13 +326,11 @@ header {
 
 }
 
+/*responsividade*/
+
 
 @media (max-width: 1200px) {
 
-.logo {
-  width: 12vh;
-  height: 12vh;
-}
 
 .search-container-Desk {
   display: none;
@@ -352,14 +361,9 @@ header {
 }
 
 .logo-img {
-  margin-left: 30px;
-  margin-top: 3px;
-  width: 50px;
-  height: 50px;
-}
-
-.nav-1.transparent {
-  background-color: #000000;
+  margin-left: 10px;
+  width: 70px;
+  height: 70px;
 }
 
 }
@@ -380,9 +384,11 @@ header {
   display: none;
 }
 
+.nav-1.transparent,
+.nav-2.transparent {
+  background-color: transparent;
 }
-
-
+}
 
 
 
