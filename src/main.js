@@ -1,5 +1,10 @@
 import './assets/main.css'
 import '@fortawesome/fontawesome-free/css/all.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { register } from 'swiper/element/bundle';
+import 'swiper/swiper-bundle.css';
+
+register();
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'

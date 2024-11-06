@@ -1,62 +1,59 @@
 <script>
-export default {
-  data() {
-    return {
-      images: [
-        '/src/assets/imagens/carro1.png',
-        '/src/assets/imagens/carro2.png',
-        '/src/assets/imagens/carro3.png',
-        // Adicione mais URLs de imagens conforme necessário
-      ],
-      activeIndex: 0,
-    };
-  },
-  methods: {
-    nextImage() {
-      this.activeIndex = (this.activeIndex + 1) % this.images.length;
-    },
-    prevImage() {
-      this.activeIndex = (this.activeIndex - 1 + this.images.length) % this.images.length;
-    },
-  },
-};
+
+
+</script>
+
+<script setup>
+
 </script>
 
 <template>
- <section id="secback">
-        <div class="homeback">
-
-          <div class="txt">
-            <h1>VINTAGE GALLERY</h1>
-          <P>Viva a nostalgia ao volante! Alugue carros antigos para eventos, ensaios e passeios únicos. Uma experiência clássica e inesquecível!</P>
-          </div>
-
-        </div>
+  <section id="secback">
+    <div class="homeback">
+      <div class="txt">
+        <h1>VINTAGE GALLERY</h1>
+        <p>Viva a nostalgia ao volante! Alugue carros antigos para eventos, ensaios e passeios únicos. Uma experiência
+          clássica e inesquecível!</p>
+      </div>
+    </div>
   </section>
   <main>
-
     <div class="carrossel">
-      <div class="carrossel-container">
-        <div class="carrossel-item" v-for="(image, index) in images" :key="index" :class="{ active: index === activeIndex, 'half-visible': index !== activeIndex }">
-          <img :src="image" alt="Carrossel Image">
-        </div>
-      </div>
-      <button class="carrossel-button left" @click="prevImage">‹</button>
-      <button class="carrossel-button right" @click="nextImage">›</button>
+      <swiper-container navigation="true" space-between="670" slides-per-view="3">
+        <swiper-slide><img src="/src/assets/imagens/carro2.png" alt="carro1"></swiper-slide>
+        <swiper-slide><img src="/src/assets/imagens/carro3.png" alt="carro2"></swiper-slide>
+        <swiper-slide><img src="/src/assets/imagens/carro1.png" alt="carro3"></swiper-slide>
+        <swiper-slide><img src="/src/assets/imagens/carro3.png" alt="carro4"></swiper-slide>
+        <swiper-slide><img src="/src/assets/imagens/carro2.png" alt="carro5"></swiper-slide>
+      </swiper-container>
     </div>
+
+    <div class="sobre">
+
+    </div>
+
+    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae esse illum doloribus recusandae nulla reiciendis eos quia suscipit ipsam expedita nobis molestias nam saepe aperiam aut, odit vitae quas? Repellendus.</div>
+
   </main>
 </template>
 
 <style scoped>
 
+/*div sobre nós */
+
+.sobre {
+  background-color: rgb(14 14 14);
+  height: 100vh;
+}
+
 /*section img */
 
 #secback {
-    background: url(/src/assets/imagens/homeback.png);
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    height: 100vh;
+  background: url(/src/assets/imagens/homeback.png);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  height: 100vh;
 }
 
 /* div img*/
@@ -92,59 +89,28 @@ export default {
 
 /*carrossel*/
 
-.carrossel {
-  position: relative;
+swiper-container {
   width: 100%;
-  overflow: hidden;
+  height: 100%;
 }
 
-.carrossel-container {
+swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
   display: flex;
-  transition: transform 0.5s ease;
-  transform: translateX(calc(-100% * var(--active-index)));
-  gap: 154px; /* Adiciona espaçamento entre as imagens */
+  justify-content:center;
+  align-items: center;
 }
 
-.carrossel-item {
-  min-width: calc(33.33% - 154px); /* Ajusta a largura das imagens para considerar o espaçamento */
-  transition: transform 0.5s ease;
-  overflow: hidden; /* Garante que a imagem seja cortada */
-}
-
-.carrossel-item img {
+swiper-slide img {
+  display: block;
   width: 684px;
-  height: 402px;
+  height: 422px;
   object-fit: cover;
 }
 
-.carrossel-item.half-visible img {
-  transform: translateX(-50%); /* Move a imagem para a esquerda para cortar pela metade */
-}
 
-.carrossel-item.active img {
-  transform: translateX(0); /* Garante que a imagem central seja exibida inteira */
-}
-
-
-
-.carrossel-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-}
-
-.carrossel-button.left {
-  left: 10px;
-}
-
-.carrossel-button.right {
-  right: 10px;
-}
 
 /*responsividade*/
 
@@ -153,14 +119,14 @@ export default {
   /*alteração nos textos responsive*/
 
   .homeback h1 {
-  color: #ffffff;
-  font-size: 20pt;
-}
+    color: #ffffff;
+    font-size: 20pt;
+  }
 
-.homeback p {
-  color: #fff;
-  font-size: 10pt;
-}
+  .homeback p {
+    color: #fff;
+    font-size: 10pt;
+  }
 }
 
 /*ANIMAÇÃO*/
@@ -201,5 +167,4 @@ export default {
 .carrossel {
   height: 900px;
 }
-
 </style>
