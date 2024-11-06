@@ -1,7 +1,11 @@
 <script setup>
+import HeaderHome from '@/components/HeaderHome.vue';
+import HomePage from '@/components/HomePage.vue';
 
 </script>
 
 <template>
-<h1></h1>
+<HeaderHome></HeaderHome>
+<HomePage></HomePage>
+
 </template>
