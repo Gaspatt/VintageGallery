@@ -120,6 +120,8 @@ onMounted(() => {
 <style scoped>
 /*header fixo*/
 
+/*header fixo*/
+
 header {
   position: fixed;
   top: 0;
@@ -334,7 +336,6 @@ header {
 
 /*responsividade*/
 
-
 @media (max-width: 1200px) {
 
 
@@ -359,7 +360,6 @@ header {
   .nav-1 {
     height: 30px;
   }
-
 
   .btn {
     padding: 2px;
@@ -395,4 +395,5 @@ header {
     background-color: transparent;
   }
 }
+
 </style>
