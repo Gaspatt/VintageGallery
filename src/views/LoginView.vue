@@ -58,7 +58,7 @@ const togglePasswordVisibility = () => {
   display: flex;
   width: 100vw;
   height: 100vh;
-  margin: 0;
+  padding: 0;
 }
 
 .img-container {
@@ -122,6 +122,7 @@ const togglePasswordVisibility = () => {
 
 .input-group {
   display: flex;
+  flex-wrap: nowrap;
   align-items: center;
   width: 100%;
   background-color: rgb(41, 41, 41);
