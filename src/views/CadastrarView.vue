@@ -2,35 +2,39 @@
 import { ref } from 'vue';
 
 // Cria variáveis reativas
-
+const name = ref('');
 const email = ref('');
 const password = ref('');
+const confirmPassword = ref('');
 const showPassword = ref(false);
-
+const showConfirmPassword = ref(false);
 
 // Função para alternar visibilidade da senha
 const togglePasswordVisibility = () => {
   showPassword.value = !showPassword.value;
 };
 
-
+const toggleConfirmPasswordVisibility = () => {
+  showConfirmPassword.value = !showConfirmPassword.value;
+};
 </script>
 
 <template>
   <div class="container">
-    <div class="img-container">
-      <img src="/src/assets/imagens/lance-reis-L8MAJUCrR5Y-unsplash (1).jpg" alt="Imagem de fundo" class="img" />
-      <RouterLink to="/">
+
+    <div class="login-container">
+      <RouterLink to="/login">
         <button class="back" aria-label="Voltar">
           <i class="fas fa-arrow-left"></i>
         </button>
       </RouterLink>
-    </div>
-
-    <div class="login-container">
       <div class="form">
         <h1 class="title">ENTRAR</h1>
 
+        <div class="input-group">
+          <i class="fas fa-user icon"></i>
+          <input type="text" name="name" placeholder="Nome:" v-model="name" />
+        </div>
 
         <div class="input-group">
           <i class="fas fa-envelope icon"></i>
@@ -45,10 +49,22 @@ const togglePasswordVisibility = () => {
             @click="togglePasswordVisibility"
           ></i>
         </div>
-        <p class="p-link">Não possui cadastro? <RouterLink to="/cadastrar">Clique Aqui</RouterLink></p>
+
+        <div class="input-group">
+          <i class="fas fa-lock icon"></i>
+          <input :type="showConfirmPassword ? 'text' : 'password'" name="confirmPassword" placeholder="Confirma Senha:" v-model="confirmPassword" />
+          <i
+            :class="showConfirmPassword ? 'fas fa-eye-slash visibility-icon' : 'fas fa-eye visibility-icon'"
+            @click="toggleConfirmPasswordVisibility"
+          ></i>
+        </div>
+        <p class="p-link">Já possui cadastro? <RouterLink to="/login">Clique Aqui</RouterLink></p>
 
         <button class="btn-enter">ENTRAR</button>
       </div>
+    </div>
+    <div class="img-container">
+      <img src="/src/assets/imagens/lance-reis-L8MAJUCrR5Y-unsplash (1).jpg" alt="Imagem de fundo" class="img" />
     </div>
   </div>
 </template>
@@ -88,8 +104,8 @@ const togglePasswordVisibility = () => {
   width: 60px;
   height: 60px;
   border: none;
-  color: #fff;
-  background-color: #000;
+  color: #ffffff;
+  background-color: #1d1c1c;
   border-radius: 50%;
   position: absolute;
   top: 20px;
