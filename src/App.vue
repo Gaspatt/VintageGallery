@@ -2,12 +2,11 @@
 import HeaderHome from './components/HeaderHome.vue';
 import { RouterView } from 'vue-router';
 
-
 </script>
 
 <template>
 
-  <HeaderHome></HeaderHome>
+  <RouterView></RouterView>
 
   <RouterView></RouterView>
 
