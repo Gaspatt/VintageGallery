@@ -174,4 +174,10 @@ input {
   font-size: 14px;
   margin-right: 200px;
 }
+
+@media (min-width: 1400px) {
+    .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
+        max-width: 100%;
+    }
+}
 </style>
