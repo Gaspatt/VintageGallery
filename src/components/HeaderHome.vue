@@ -120,8 +120,6 @@ onMounted(() => {
 <style scoped>
 /*header fixo*/
 
-/*header fixo*/
-
 header {
   position: fixed;
   top: 0;
@@ -139,6 +137,7 @@ header {
   height: 50px;
   padding: 40px;
   transition: 1s;
+
 }
 
 /*logo*/
@@ -233,6 +232,7 @@ header {
   gap: 3rem;
   justify-content: center;
   margin-left: 120px;
+  margin-top: 2vh;
 }
 
 .nav-link {
