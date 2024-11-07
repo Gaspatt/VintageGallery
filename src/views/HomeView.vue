@@ -43,24 +43,39 @@
     <div class="row carros">
       <div class="col-sm-4">
         <img src="/src/assets/imagens/carroprin1.png" alt="carro1">
-        <h3>Carro 1</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae esse illum doloribus recusandae nulla
-          reiciendis eos quia suscipit ipsam expedita nobis molestias nam saepe aperiam aut, odit vitae quas?
-          Repellendus.</p>
+        <div class="textocarro">
+          <span>1978 Volkswagen Passat TS</span>
+          <ul>
+            <li><i class="bi bi-gear-fill"></i>Volkswagen</li>
+            <li><i class="bi bi-speedometer"></i>1978</li>
+          </ul>
+          <div class="botaocarro">
+            <button class="btn btn-dark">Alugar</button>
+          </div>
+        </div>
+
       </div>
       <div class="col-sm-4">
         <img src="/src/assets/imagens/carro2.png" alt="carro2">
-        <h3>Carro 2</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae esse illum doloribus recusandae nulla
-          reiciendis eos quia suscipit ipsam expedita nobis molestias nam saepe aperiam aut, odit vitae quas?
-          Repellendus.</p>
+        <div class="textocarro">
+          <span>carro 2</span>
+          <ul>
+            <li><i class="bi bi-gear-fill"></i>Volkswagen</li>
+            <li><i class="bi bi-speedometer"></i>1978</li>
+          </ul>
+        </div>
+
       </div>
       <div class="col-sm-4">
         <img src="/src/assets/imagens/carro3.png" alt="carro3">
-        <h3>Carro 3</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae esse illum doloribus recusandae nulla
-          reiciendis eos quia suscipit ipsam expedita nobis molestias nam saepe aperiam aut, odit vitae quas?
-          Repellendus.</p>
+        <div class="textocarro">
+          <span>carro 3</span>
+          <ul>
+            <li><i class="bi bi-gear-fill"></i>Volkswagen</li>
+            <li><i class="bi bi-speedometer"></i>1978</li>
+          </ul>
+        </div>
+
       </div>
     </div>
 
@@ -113,8 +128,53 @@
   align-items: center;
   flex-wrap: wrap;
   margin-top: 10vh;
+  text-align: center;
 }
 
+/*carros */
+
+.carros img {
+  width: 270px;
+  height: 174px;
+  margin: 10px;
+}
+
+.textocarro {
+  color: #000;
+  padding: 20px 0 0 0;
+}
+
+.textocarro span {
+  padding: 0 0 30px 0;
+  display: block;
+}
+
+.textocarro li {
+  display: inline-block;
+    text-align: center;
+    position: relative;
+    padding: 0 4px;
+    background: transparent;
+    font-size: 14px;
+    margin: 0;
+}
+
+.textocarro li i {
+  display: block;
+    margin: 2px auto 0;
+    font-size: 20px;
+    height: 27px;
+    width: 50px;
+}
+
+.textocarro ul {
+  display: inline-block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 0;
+}
 /*section img */
 
 #secback {
