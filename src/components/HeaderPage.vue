@@ -45,6 +45,7 @@ onMounted(() => {
 
       <div :class="['nav-menu-lateral', { active: isMenuActive }]">
 
+
         <router-link to="/"><img src="/src/assets/imagens/logo.png" alt="logo" class="logo-img-lateral"></router-link>
 
         <i class="fas fa-times fa-2x" @click="toggleMenu"></i>
@@ -63,6 +64,7 @@ onMounted(() => {
       </div>
 
       <!--nav bar-->
+
 
       <RouterLink to="/"> <img src="/src/assets/imagens/logo.png" alt="logo" class="logo-img">
       </RouterLink>
@@ -120,14 +122,13 @@ onMounted(() => {
 <style scoped>
 /*header fixo*/
 
-/*header fixo*/
-
 header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 /*nav de cima*/
@@ -336,6 +337,7 @@ header {
 
 /*responsividade*/
 
+
 @media (max-width: 1200px) {
 
 
@@ -360,6 +362,7 @@ header {
   .nav-1 {
     height: 30px;
   }
+
 
   .btn {
     padding: 2px;
@@ -390,10 +393,5 @@ header {
     display: none;
   }
 
-  .nav-1.transparent,
-  .nav-2.transparent {
-    background-color: transparent;
-  }
 }
-
 </style>
