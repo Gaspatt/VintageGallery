@@ -1,10 +1,123 @@
-<script>
-
-
-</script>
-
 <script setup>
+import { useRouter } from 'vue-router';
+import { useCarStore } from '../stores/carStore';
 
+const router = useRouter();
+const carStore = useCarStore();
+
+const cars = [
+  {
+    id: 1,
+    name: '1978 Volkswagen Passat TS',
+    brand: 'Volkswagen',
+    model: 'Passat TS',
+    color: 'Azul',
+    year: 1978,
+    motor: '1.6',
+    transmission: 'Manual',
+    km: '25.372',
+    location: 'São Paulo',
+    price: 'R$ 110.000,00',
+    image: '/src/assets/imagens/carroprin1.png',
+    description: 'Descrição do carro 1',
+    specifications: 'Especificações detalhadas do carro 1...',
+    interior: 'Detalhes sobre o interior e painel do carro 1...',
+    photos: [
+      '/src/assets/imagens/carro1_interior1.png',
+      '/src/assets/imagens/carro1_interior2.png',
+    ],
+  },
+  {
+    id: 2,
+    name: '1974 Volkswagen Fusca',
+    brand: 'Volkswagen',
+    model: 'Fusca',
+    color: 'Vermelho',
+    year: 1974,
+    motor: '1.3',
+    transmission: 'Manual',
+    km: '15.000',
+    location: 'São Paulo',
+    price: 'R$ 90.000,00',
+    image: '/src/assets/imagens/carroprin2.png',
+    description: 'Descrição do carro 2',
+    specifications: 'Especificações detalhadas do carro 2...',
+    interior: 'Detalhes sobre o interior e painel do carro 2...',
+    photos: [
+      '/src/assets/imagens/carro2_interior1.png',
+      '/src/assets/imagens/carro2_interior2.png',
+    ],
+  },
+
+  {
+    id: 3,
+    name: '1972 Volkswagen Karmann Ghia TC',
+    brand: 'Volkswagen',
+    model: 'Karmann Ghia TC',
+    color: 'Amarelo',
+    year: 1972,
+    motor: '1.6',
+    transmission: 'Manual',
+    km: '30.000',
+    location: 'São Paulo',
+    price: 'R$ 120.000,00',
+    image: '/src/assets/imagens/carroprin3.png',
+    description: 'Descrição do carro 3',
+    specifications: 'Especificações detalhadas do carro 3...',
+    interior: 'Detalhes sobre o interior e painel do carro 3...',
+    photos: [
+      '/src/assets/imagens/carro3_interior1.png',
+      '/src/assets/imagens/carro3_interior2.png',
+    ],
+  },
+  {
+    id: 4,
+    name: '1976 Volkswagen Brasília',
+    brand: 'Volkswagen',
+    model: 'Brasília',
+    color: 'Verde',
+    year: 1976,
+    motor: '1.6',
+    transmission: 'Manual',
+    km: '20.000',
+    location: 'São Paulo',
+    price: 'R$ 100.000,00',
+    image: '/src/assets/imagens/carroprin4.png',
+    description: 'Descrição do carro 4',
+    specifications: 'Especificações detalhadas do carro 4...',
+    interior: 'Detalhes sobre o interior e painel do carro 4...',
+    photos: [
+      '/src/assets/imagens/carro4_interior1.png',
+      '/src/assets/imagens/carro4_interior2.png',
+    ],
+  },
+  {
+    id: 5,
+    name: '1975 Volkswagen Variant II',
+    brand: 'Volkswagen',
+    model: 'Variant II',
+    color: 'Branco',
+    year: 1975,
+    motor: '1.6',
+    transmission: 'Manual',
+    km: '22.000',
+    location: 'São Paulo',
+    price: 'R$ 105.000,00',
+    image: '/src/assets/imagens/carroprin5.png',
+    description: 'Descrição do carro 5',
+    specifications: 'Especificações detalhadas do carro 5...',
+    interior: 'Detalhes sobre o interior e painel do carro 5...',
+    photos: [
+      '/src/assets/imagens/carro5_interior1.png',
+      '/src/assets/imagens/carro5_interior2.png',
+    ],
+  },
+];
+
+const rentCar = (car) => {
+  carStore.selectCar(car);
+  router.push(`/car/${car.id}`);
+};
 </script>
 
 <template>
@@ -41,41 +154,18 @@
     </section>
 
     <div class="row carros">
-      <div class="col-sm-4">
-        <img src="/src/assets/imagens/carroprin1.png" alt="carro1">
+      <div class="col-sm-4" v-for="car in cars" :key="car.id">
+        <img :src="car.image" :alt="car.name">
         <div class="textocarro">
-          <span>1978 Volkswagen Passat TS</span>
+          <span>{{ car.name }}</span>
           <ul>
-            <li><i class="bi bi-gear-fill"></i>Volkswagen</li>
-            <li><i class="bi bi-speedometer"></i>1978</li>
+            <li><i class="bi bi-gear-fill"></i>{{ car.brand }}</li>
+            <li><i class="bi bi-speedometer"></i>{{ car.year }}</li>
           </ul>
           <div class="botaocarro">
-            <button class="btn btn-dark">Alugar</button>
+            <button class="btn btn-dark" @click="rentCar(car)">Alugar</button>
           </div>
         </div>
-
-      </div>
-      <div class="col-sm-4">
-        <img src="/src/assets/imagens/carro2.png" alt="carro2">
-        <div class="textocarro">
-          <span>carro 2</span>
-          <ul>
-            <li><i class="bi bi-gear-fill"></i>Volkswagen</li>
-            <li><i class="bi bi-speedometer"></i>1978</li>
-          </ul>
-        </div>
-
-      </div>
-      <div class="col-sm-4">
-        <img src="/src/assets/imagens/carro3.png" alt="carro3">
-        <div class="textocarro">
-          <span>carro 3</span>
-          <ul>
-            <li><i class="bi bi-gear-fill"></i>Volkswagen</li>
-            <li><i class="bi bi-speedometer"></i>1978</li>
-          </ul>
-        </div>
-
       </div>
     </div>
 
@@ -120,61 +210,8 @@
   font-size: 15pt;
 }
 
-/*div carros */
+/*TUDO SOBRE OS CARROS ESTÃO NO main.css!! */
 
-.carros {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-top: 10vh;
-  text-align: center;
-}
-
-/*carros */
-
-.carros img {
-  width: 270px;
-  height: 174px;
-  margin: 10px;
-}
-
-.textocarro {
-  color: #000;
-  padding: 20px 0 0 0;
-}
-
-.textocarro span {
-  padding: 0 0 30px 0;
-  display: block;
-}
-
-.textocarro li {
-  display: inline-block;
-    text-align: center;
-    position: relative;
-    padding: 0 4px;
-    background: transparent;
-    font-size: 14px;
-    margin: 0;
-}
-
-.textocarro li i {
-  display: block;
-    margin: 2px auto 0;
-    font-size: 20px;
-    height: 27px;
-    width: 50px;
-}
-
-.textocarro ul {
-  display: inline-block;
-    width: 100%;
-    text-align: center;
-    margin-bottom: 15px;
-    padding-bottom: 10px;
-    border-bottom: 0;
-}
 /*section img */
 
 #secback {
