@@ -99,7 +99,7 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to right, #17221b, #30835d);
+  background-color: rgb(247, 244, 244);
   width: 100vw;
   height: 100vh;
   position: relative;
@@ -109,8 +109,8 @@ export default {
   width: 60px;
   height: 60px;
   border: none;
-  color: #000000;
-  background-color: #fff;
+  color: #ffffff;
+  background-color: #000000;
   border-radius: 50px;
   position: absolute;
   top: 20px;
@@ -120,8 +120,8 @@ export default {
 
 .back:hover {
   background: transparent;
-  color: #fff;
-  border: 2px solid #fff;
+  color: #000000;
+  border: 2px solid #000000;
 }
 
 i {
@@ -133,43 +133,41 @@ i {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgb(26, 24, 24);
+  background-color: rgb(255, 255, 255);
   width: 500px;
   padding: 30px;
   border-radius: 10px;
   gap: 15px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  animation: slideUp 2s ease-out;
 }
 
 .input-group {
   display: flex;
   align-items: center;
   width: 100%;
-  background-color: rgb(41, 41, 41);
-  color: white;
+  background-color: rgb(236, 234, 234);
+  color: rgb(0, 0, 0);
   border-radius: 10px;
   padding: 10px;
-}
-
-.input-group:hover {
-  background-color: rgb(27, 24, 24);
-  color: white;
-  border: none;
+  gap: 10px; 
 }
 
 .icon {
-  color: #888;
+  font-size: 20px;
+  color: #000000;
   margin-right: 10px;
 }
 
 input, textarea {
-  width: 100%;
+  flex: 1;
   border: none;
   background: none;
   color: #000000;
   outline: none;
   font-size: 16px;
-  color: white;
 }
+
 
 textarea {
   height: 100px;
@@ -179,11 +177,11 @@ textarea {
 .title {
   font-size: 25px;
   margin-bottom: 20px;
-  color: #ffffff;
+  color: #000000;
 }
 
 .btn-enviar {
-  background-color: #2a5239;
+  background-color: #1a1a1a;
   border: none;
   height: 40px;
   width: 30vh;
@@ -193,7 +191,7 @@ textarea {
 }
 
 .btn-enviar:hover {
-  background-color: #2d6d45;
+  background-color: #000000;
 }
 
 /* Estilos da mensagem centralizada */
@@ -242,5 +240,17 @@ textarea {
 
 .btn-close:hover {
   background-color: #210335;
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 </style>
