@@ -60,7 +60,7 @@ const toggleConfirmPasswordVisibility = () => {
         </div>
         <p class="p-link">Já possui cadastro? <RouterLink to="/login">Clique Aqui</RouterLink></p>
 
-        <button class="btn-enter">ENTRAR</button>
+        <button class="btn-enter">CADASTRAR</button>
       </div>
     </div>
     <div class="img-container">
@@ -74,6 +74,7 @@ const toggleConfirmPasswordVisibility = () => {
   display: flex;
   width: 100vw;
   height: 100vh;
+  padding: 0;
 }
 
 .img-container {
@@ -137,6 +138,7 @@ const toggleConfirmPasswordVisibility = () => {
 
 .input-group {
   display: flex;
+  flex-wrap: nowrap;
   align-items: center;
   width: 100%;
   background-color: rgb(41, 41, 41);
@@ -188,5 +190,11 @@ input {
   color: #fff;
   font-size: 14px;
   margin-right: 200px;
+}
+
+@media (min-width: 1400px) {
+    .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
+        max-width: 100%;
+    }
 }
 </style>

@@ -99,7 +99,7 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to right, #000000, #4a1f66);
+  background: linear-gradient(to right, #17221b, #30835d);
   width: 100vw;
   height: 100vh;
   position: relative;
@@ -133,7 +133,7 @@ i {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #fff;
+  background-color: rgb(26, 24, 24);
   width: 500px;
   padding: 30px;
   border-radius: 10px;
@@ -144,13 +144,16 @@ i {
   display: flex;
   align-items: center;
   width: 100%;
-  background-color: #dfdcdc;
+  background-color: rgb(41, 41, 41);
+  color: white;
   border-radius: 10px;
   padding: 10px;
 }
 
 .input-group:hover {
-  background-color: #bebebe;
+  background-color: rgb(27, 24, 24);
+  color: white;
+  border: none;
 }
 
 .icon {
@@ -165,6 +168,7 @@ input, textarea {
   color: #000000;
   outline: none;
   font-size: 16px;
+  color: white;
 }
 
 textarea {
@@ -175,20 +179,21 @@ textarea {
 .title {
   font-size: 25px;
   margin-bottom: 20px;
+  color: #ffffff;
 }
 
 .btn-enviar {
-  background-color: #4a1f66;
+  background-color: #2a5239;
   border: none;
-  color: #fff;
-  width: 100px;
-  height: 30px;
-  border-radius: 5px;
-  transition: 0.3s;
+  height: 40px;
+  width: 30vh;
+  color: white;
+  border-radius: 10px;
+  margin-top: 20px;
 }
 
 .btn-enviar:hover {
-  background-color: #210335;
+  background-color: #2d6d45;
 }
 
 /* Estilos da mensagem centralizada */

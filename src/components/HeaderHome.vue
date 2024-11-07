@@ -72,9 +72,9 @@ onMounted(() => {
         <li class="nav-item">
           <router-link to="/" class="nav-link">HOME</router-link>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <router-link to="/cars" class="nav-link">CARROS</router-link>
-        </li>
+        </li> -->
         <li class="nav-item">
           <router-link to="/contact" class="nav-link">CONTATO</router-link>
         </li>
@@ -120,8 +120,6 @@ onMounted(() => {
 <style scoped>
 /*header fixo*/
 
-/*header fixo*/
-
 header {
   position: fixed;
   top: 0;
@@ -137,8 +135,9 @@ header {
   align-items: center;
   background-color: #000;
   height: 50px;
-  padding: 20px;
+  padding: 40px;
   transition: 1s;
+
 }
 
 /*logo*/
@@ -233,6 +232,7 @@ header {
   gap: 3rem;
   justify-content: center;
   margin-left: 120px;
+  margin-top: 2vh;
 }
 
 .nav-link {
@@ -317,6 +317,10 @@ header {
   right: 30px;
   cursor: pointer;
   color: rgb(255, 255, 255);
+}
+
+.nav-menu-lateral ul {
+  list-style: none;
 }
 
 .nav-menu-lateral {

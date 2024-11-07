@@ -9,13 +9,15 @@
 
 /*div carros */
 
-.carros {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-top: 10vh;
-    text-align: center;
+
+
+  .uni-carros {
+    background-color: rgb(241, 241, 241);
+    transition: 0.3s;
+  }
+
+  .uni-carros:hover {
+    transform: translateY(-7px);
   }
   
   /*carros */

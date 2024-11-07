@@ -54,9 +54,9 @@ onMounted(() => {
           <li class="nav-item-mobile">
             <router-link to="/" class="nav-link-mobile">HOME</router-link>
           </li>
-          <li class="nav-item-mobile">
+          <!-- <li class="nav-item-mobile">
             <router-link to="/cars" class="nav-link-mobile">CARROS</router-link>
-          </li>
+          </li> -->
           <li class="nav-item-mobile">
             <router-link to="/contact" class="nav-link-mobile">CONTATO</router-link>
           </li>
