@@ -137,7 +137,7 @@ header {
   align-items: center;
   background-color: #000;
   height: 50px;
-  padding: 20px;
+  padding: 40px;
   transition: 1s;
 }
 
@@ -317,6 +317,10 @@ header {
   right: 30px;
   cursor: pointer;
   color: rgb(255, 255, 255);
+}
+
+.nav-menu-lateral ul {
+  list-style: none;
 }
 
 .nav-menu-lateral {

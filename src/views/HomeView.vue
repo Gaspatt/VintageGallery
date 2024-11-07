@@ -1,6 +1,7 @@
 <script setup>
 import { useRouter } from 'vue-router';
 import { useCarStore } from '../stores/carStore';
+import HeaderHome from '@/components/HeaderHome.vue';
 
 const router = useRouter();
 const carStore = useCarStore();
@@ -121,6 +122,7 @@ const rentCar = (car) => {
 </script>
 
 <template>
+  <HeaderHome></HeaderHome>
   <section id="secback">
     <div class="homeback">
       <div class="txt">
