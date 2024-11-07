@@ -1,6 +1,7 @@
 import './assets/main.css'
 import '@fortawesome/fontawesome-free/css/all.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap';
 import { register } from 'swiper/element/bundle';
 import 'swiper/swiper-bundle.css';
 
