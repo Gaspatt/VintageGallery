@@ -40,7 +40,7 @@ const cars = [
     km: '100.000',
     location: 'São Paulo',
     price: 'R$ 1.590.000,00',
-    image: '/src/assets/imagens/carroprin2.jpg',
+    image: '/src/assets/imagens/carroprin2.png',
     description: 'Descrição do carro 2',
     specifications: 'Especificações detalhadas do carro 2...',
     interior: 'Detalhes sobre o interior e painel do carro 2...',
