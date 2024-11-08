@@ -121,14 +121,26 @@ export default {
   </div>
 </template>
 
+
 <style scoped>
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* Garante que padding e border sejam incluídos na largura/altura */
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden; /* Evita rolagem horizontal */
+}
+
 .background {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: rgb(247, 244, 244);
-  width: 100vw;
+  width: 100%; /* Ajuste para 100% */
   height: 100vh;
   position: relative;
 }
@@ -150,10 +162,6 @@ export default {
   background: transparent;
   color: #000000;
   border: 2px solid #000000;
-}
-
-i {
-  font-size: 20px;
 }
 
 .form {
@@ -192,7 +200,8 @@ i {
   margin-right: 10px;
 }
 
-input, textarea {
+input,
+textarea {
   flex: 1;
   border: none;
   background: none;
@@ -219,9 +228,12 @@ textarea {
   width: 30vh;
   color: white;
   border-radius: 10px;
+  align-items: center;
   margin-top: 20px;
   cursor: pointer;
   transition: 0.7s;
+  display: flex;
+  justify-content: center;
 }
 
 .btn-enviar:hover {
@@ -267,10 +279,36 @@ textarea {
     opacity: 0;
     transform: translateY(20px);
   }
-
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* Estilos responsivos para telas menores */
+@media (max-width: 768px) {
+  .form {
+    width: 90%;
+    padding: 20px;
+    gap: 10px;
+  }
+
+  .input-group {
+    padding: 8px;
+  }
+
+  input,
+  textarea {
+    font-size: 14px;
+  }
+
+  .btn-enviar {
+    width: 100%;
+    height: 40px;
+  }
+
+  .title {
+    font-size: 20px;
   }
 }
 </style>
