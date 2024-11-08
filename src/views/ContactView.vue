@@ -1,51 +1,77 @@
 <script>
-import { ref, computed } from 'vue';
-
 export default {
-  setup() {
-    // Variáveis reativas para os campos do formulário
-    const name = ref('');
-    const email = ref('');
-    const title = ref('');
-    const message = ref('');
-
-    // Variável reativa para armazenar o estado de preenchimento
-    const formStatus = ref(null); // null: sem mensagem, 'success': sucesso, 'error': erro
-
-    // Computed para verificar se todos os campos estão preenchidos
-    const allFieldsFilled = computed(() => {
-      return name.value && email.value && title.value && message.value;
-    });
-
-    // Função para exibir a mensagem com base no status do formulário
-    const msg = () => {
-      if (allFieldsFilled.value) {
-        formStatus.value = 'success';
-      } else {
-        formStatus.value = 'error';
-      }
-    };
-
-    // Função para fechar a mensagem e resetar os campos se for sucesso
-    const closeMessage = () => {
-      if (formStatus.value === 'success') {
-        name.value = '';
-        email.value = '';
-        title.value = '';
-        message.value = '';
-      }
-      formStatus.value = null;
-    };
-
+  data() {
     return {
-      name,
-      email,
-      title,
-      message,
-      formStatus,
-      msg,
-      closeMessage
+      name: '',
+      email: '',
+      title: '',
+      message: '',
+      errors: {
+        name: '',
+        email: '',
+        title: '',
+        message: ''
+      },
+      showModal: false // Estado para controlar a visibilidade do modal
     };
+  },
+  methods: {
+    validateForm() {
+      // Reset error messages
+      this.errors = {
+        name: '',
+        email: '',
+        title: '',
+        message: ''
+      };
+
+      let isValid = true;
+
+      // Validate name: check if it's empty or contains numbers
+      const nameRegex = /^[a-zA-Z\s]*$/;
+      if (!this.name) {
+        this.errors.name = 'O nome é obrigatório';
+        isValid = false;
+      } else if (!nameRegex.test(this.name)) {
+        this.errors.name = 'O nome não pode conter números';
+        isValid = false;
+      }
+
+      // Validate email: check if it's empty or doesn't contain "@"
+      if (!this.email) {
+        this.errors.email = 'O email é obrigatório';
+        isValid = false;
+      } else if (!this.email.includes('@')) {
+        this.errors.email = 'O email deve conter "@"';
+        isValid = false;
+      }
+
+      // Validate title
+      if (!this.title) {
+        this.errors.title = 'O assunto é obrigatório';
+        isValid = false;
+      }
+
+      // Validate message
+      if (!this.message) {
+        this.errors.message = 'A mensagem é obrigatória';
+        isValid = false;
+      }
+
+      return isValid;
+    },
+    submitForm() {
+      if (this.validateForm()) {
+        this.showModal = true; // Mostrar modal em vez de alert
+      }
+    },
+    closeModal() {
+      this.showModal = false;
+      this.name = '';
+      this.email = '';
+      this.title = '';
+      this.message = '';
+    }
   }
 };
 </script>
@@ -63,32 +89,34 @@ export default {
         <i class="fas fa-user icon"></i>
         <input type="text" name="name" placeholder="Nome:" v-model="name" />
       </div>
+      <div v-if="errors.name" class="error">{{ errors.name }}</div>
 
       <div class="input-group">
         <i class="fas fa-envelope icon"></i>
         <input type="email" name="email" placeholder="Email:" v-model="email" />
       </div>
+      <div v-if="errors.email" class="error">{{ errors.email }}</div>
 
       <div class="input-group">
         <i class="fas fa-tag icon"></i>
         <input type="text" name="title" placeholder="Assunto:" v-model="title" />
       </div>
+      <div v-if="errors.title" class="error">{{ errors.title }}</div>
 
       <div class="input-group">
         <textarea name="text" placeholder="Fale aqui!" v-model="message"></textarea>
       </div>
+      <div v-if="errors.message" class="error">{{ errors.message }}</div>
 
-      <button @click="msg()" class="btn-enviar">ENVIAR</button>
+      <button class="btn-enviar" @click="submitForm">ENVIAR</button>
     </div>
 
-    <!-- Mensagem de sucesso ou erro centralizada com botão "OK" para fechar -->
-    <div v-if="formStatus === 'success'" class="confirmation-message success">
-      <p>TODOS OS CAMPOS FORAM PREENCHIDOS COM SUCESSO! ENTRAREMOS EM CONTATO PELO EMAIL</p>
-      <button class="btn-close" @click="closeMessage">OK</button>
-    </div>
-    <div v-if="formStatus === 'error'" class="confirmation-message error">
-      <p>POR FAVOR, PREENCHA TODOS OS CAMPOS.</p>
-      <button class="btn-close" @click="closeMessage">OK</button>
+    <!-- Modal -->
+    <div v-if="showModal" class="modal">
+      <div class="modal-content">
+        <p>Formulário enviado com sucesso!</p>
+        <button @click="closeModal">OK</button>
+      </div>
     </div>
   </div>
 </template>
@@ -153,6 +181,11 @@ i {
   gap: 10px;
 }
 
+.error {
+  font-size: 12px;
+  color: red;
+}
+
 .icon {
   font-size: 20px;
   color: #000000;
@@ -167,7 +200,6 @@ input, textarea {
   outline: none;
   font-size: 16px;
 }
-
 
 textarea {
   height: 100px;
@@ -192,64 +224,41 @@ textarea {
   transition: 0.7s;
 }
 
+.btn-enviar:hover {
+  background-color: rgb(95, 95, 95);
+}
 
-/* Estilos da mensagem centralizada */
-.confirmation-message {
+.modal {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background-color: white;
   padding: 20px;
+  border-radius: 10px;
   text-align: center;
-  font-size: 1.0em;
-  font-weight: bold;
-  width: 80%;
-  max-width: 500px;
-  z-index: 1000;
+  width: 400px;
 }
 
-/* Estilo para a mensagem de sucesso (verde) */
-.success {
-  font-size: 18px;
-  border-radius: 10px;
-  margin-top: -350px;
-  padding: 20px;
-  background-color: #ffffff;
-  color: #155724;
-  border: 2px solid #000000;
-}
-
-/* Estilo para a mensagem de erro (vermelho) */
-.error {
-  font-size: 18px;
-  border-radius: 10px;
-  margin-top: -350px;
-  padding: 20px;
-  background-color: #ffffff;
-  color: #ff0000;
-  border: 1px solid #f5c6cb;
-  border: 3px solid rgb(0, 0, 0);
-}
-
-/* Estilo do botão "OK" */
-.btn-close {
+.modal-content button {
   margin-top: 15px;
-  padding: 10px;
-  font-size: 0.9em;
-  color: #fff;
-  background-color: #000000;
+  padding: 10px 20px;
+  background-color: #1a1a1a;
+  color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: 0.3s;
-  width: 100px;
 }
 
-.btn-close:hover {
-  background-color: #000000;
-}
-
-.btn-enviar:hover {
+.modal-content button:hover {
   background-color: rgb(95, 95, 95);
 }
 
