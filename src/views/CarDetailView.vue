@@ -58,9 +58,6 @@ const car = computed(() => carStore.selectedCar)
         <button class="btn btn-dark">Entrar em contato</button>
       </div>
     </div>
-    <p>drgdfkpjghdfoighdroiughdroighdroigdhroigdhriogdhriogdhijrop</p>
-
-    <br>
   </div>
 </template>
 
