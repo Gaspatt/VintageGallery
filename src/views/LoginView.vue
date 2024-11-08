@@ -1,99 +1,70 @@
 <script setup>
 import { ref } from 'vue';
 
-// Cria variáveis reativas
-
 const email = ref('');
 const password = ref('');
 const showPassword = ref(false);
 
-
-// Função para alternar visibilidade da senha
-const togglePasswordVisibility = () => {
+function togglePasswordVisibility() {
   showPassword.value = !showPassword.value;
-};
-
-
+}
 </script>
 
 <template>
-  <div class="container">
-    <div class="img-container">
-      <img src="/src/assets/imagens/lance-reis-L8MAJUCrR5Y-unsplash (1).jpg" alt="Imagem de fundo" class="img" />
-      <RouterLink to="/">
-        <button class="back" aria-label="Voltar">
-          <i class="fas fa-arrow-left"></i>
-        </button>
-      </RouterLink>
-    </div>
+  <div class="background">
+    <RouterLink to="/">
+      <button class="back"><i class="fas fa-arrow-left"></i></button>
+    </RouterLink>
 
-    <div class="login-container">
-      <div class="form">
-        <h1 class="title">ENTRAR</h1>
+    <div class="form">
+      <h1 class="title">LOGIN</h1>
 
-
-        <div class="input-group">
-          <i class="fas fa-envelope icon"></i>
-          <input type="email" name="email" placeholder="Email:" v-model="email" />
-        </div>
-
-        <div class="input-group">
-          <i class="fas fa-lock icon"></i>
-          <input :type="showPassword ? 'text' : 'password'" name="password" placeholder="Senha:" v-model="password" />
-          <i
-            :class="showPassword ? 'fas fa-eye-slash visibility-icon' : 'fas fa-eye visibility-icon'"
-            @click="togglePasswordVisibility"
-          ></i>
-        </div>
-        <p class="p-link">Não possui cadastro? <RouterLink to="/cadastrar">Clique Aqui</RouterLink></p>
-
-        <router-link to="/"><button class="btn-enter">ENVIAR</button></router-link>
+      <div class="input-group">
+        <i class="fas fa-envelope icon"></i>
+        <input type="email" name="email" placeholder="Email:" v-model="email" />
       </div>
+
+      <div class="input-group">
+        <i class="fas fa-lock icon"></i>
+        <input
+          :type="showPassword ? 'text' : 'password'"
+          name="password"
+          placeholder="Senha"
+          v-model="password"
+        />
+        <i
+          :class="showPassword ? 'fas fa-eye-slash icon' : 'fas fa-eye icon'"
+          @click="togglePasswordVisibility"
+          style="cursor: pointer"
+        ></i>
+      </div>
+
+      <button class="btn-enviar">CADASTRAR</button>
+
+      <p>Não possui cadastro? <RouterLink to="/cadastrar">clique aqui</RouterLink></p>
     </div>
   </div>
 </template>
 
 <style scoped>
-.container {
+.background {
   display: flex;
-  width: 100vw;
-  height: 100vh;
-  padding: 0;
-}
-
-.img-container {
-  width: 60%;
-  position: relative;
-  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-.img {
-  position: absolute;
+  background-color: rgb(247, 244, 244);
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-}
-
-.login-container {
-  width: 40%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #f3f1f1;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  border-radius: 20px;
+  height: 100vh;
+  position: relative;
 }
 
 .back {
   width: 60px;
   height: 60px;
   border: none;
-  color: #fff;
-  background-color: #000;
-  border-radius: 50%;
+  color: #ffffff;
+  background-color: #000000;
+  border-radius: 50px;
   position: absolute;
   top: 20px;
   left: 20px;
@@ -103,54 +74,41 @@ const togglePasswordVisibility = () => {
 .back:hover {
   background: transparent;
   color: #000000;
-  border: 3px solid #000000;
+  border: 2px solid #000000;
 }
 
 .form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 80%;
+  justify-content: center;
+  width: 500px;
   padding: 30px;
   border-radius: 10px;
   gap: 15px;
-}
-
-.title {
-  font-size: 25px;
-  margin-bottom: 20px;
-  color: #000000;
+  animation: slideUp 2s ease-out;
 }
 
 .input-group {
   display: flex;
-  flex-wrap: nowrap;
   align-items: center;
   width: 100%;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(214, 213, 213);
+  color: rgb(0, 0, 0);
   border-radius: 10px;
   padding: 10px;
-  transition: background-color 0.2s;
-}
-
-.input-group:hover {
-  background-color: rgb(230, 225, 225);
-  color: rgb(0, 0, 0);
+  gap: 10px;
 }
 
 .icon {
+  font-size: 20px;
   color: #000000;
   margin-right: 10px;
 }
 
-.visibility-icon {
-  cursor: pointer;
-  color: #000000;
-  margin-left: 10px;
-}
-
-input {
-  width: 100%;
+input,
+textarea {
+  flex: 1;
   border: none;
   background: none;
   color: #000000;
@@ -158,32 +116,40 @@ input {
   font-size: 16px;
 }
 
-.btn-enter {
-  background-color: #333131;
+.btn-enviar {
+  background-color: #1a1a1a;
   border: none;
-  height: 40px;
-  width: 30vh;
+  height: 45px;
+  width: 100%;
   color: white;
   border-radius: 10px;
-  margin-top: 20px;
+  align-items: center;
+  margin-top: 50px;
+  cursor: pointer;
+  transition: 0.7s;
+  display: flex;
+  justify-content: center;
 }
 
-.btn-enter:hover {
-  background-color: #000000;
+.btn-enviar:hover {
+  background-color: rgb(95, 95, 95);
 }
 
-a {
-  text-decoration: none;
-}
-.p-link {
+.title {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 50px;
   color: #000000;
-  font-size: 14px;
-  margin-right: 200px;
 }
 
-@media (min-width: 1400px) {
-    .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
-        max-width: 100%;
-    }
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 </style>
