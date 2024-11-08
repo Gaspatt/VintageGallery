@@ -47,7 +47,7 @@ const togglePasswordVisibility = () => {
         </div>
         <p class="p-link">Não possui cadastro? <RouterLink to="/cadastrar">Clique Aqui</RouterLink></p>
 
-        <button class="btn-enter">ENTRAR</button>
+        <router-link to="/"><button class="btn-enter">ENVIAR</button></router-link>
       </div>
     </div>
   </div>
@@ -82,7 +82,9 @@ const togglePasswordVisibility = () => {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #000;
+  background-color: #f3f1f1;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 20px;
 }
 
 .back {
@@ -100,8 +102,8 @@ const togglePasswordVisibility = () => {
 
 .back:hover {
   background: transparent;
-  color: #fff;
-  border: 3px solid #fff;
+  color: #000000;
+  border: 3px solid #000000;
 }
 
 .form {
@@ -117,7 +119,7 @@ const togglePasswordVisibility = () => {
 .title {
   font-size: 25px;
   margin-bottom: 20px;
-  color: #fff;
+  color: #000000;
 }
 
 .input-group {
@@ -125,25 +127,25 @@ const togglePasswordVisibility = () => {
   flex-wrap: nowrap;
   align-items: center;
   width: 100%;
-  background-color: rgb(41, 41, 41);
+  background-color: rgb(255, 255, 255);
   border-radius: 10px;
   padding: 10px;
   transition: background-color 0.2s;
 }
 
 .input-group:hover {
-  background-color: rgb(27, 24, 24);
-  color: white;
+  background-color: rgb(230, 225, 225);
+  color: rgb(0, 0, 0);
 }
 
 .icon {
-  color: #ffffff;
+  color: #000000;
   margin-right: 10px;
 }
 
 .visibility-icon {
   cursor: pointer;
-  color: #ffffff;
+  color: #000000;
   margin-left: 10px;
 }
 
@@ -151,13 +153,13 @@ input {
   width: 100%;
   border: none;
   background: none;
-  color: #ffffff;
+  color: #000000;
   outline: none;
   font-size: 16px;
 }
 
 .btn-enter {
-  background-color: #2a5239;
+  background-color: #333131;
   border: none;
   height: 40px;
   width: 30vh;
@@ -167,14 +169,14 @@ input {
 }
 
 .btn-enter:hover {
-  background-color: #2d6d45;
+  background-color: #000000;
 }
 
 a {
   text-decoration: none;
 }
 .p-link {
-  color: #fff;
+  color: #000000;
   font-size: 14px;
   margin-right: 200px;
 }

@@ -460,6 +460,7 @@ swiper-slide {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: black;
 }
 
 swiper-slide img {
@@ -526,4 +527,5 @@ swiper-slide img {
 .carrossel {
   height: 600px;
 }
+
 </style>
