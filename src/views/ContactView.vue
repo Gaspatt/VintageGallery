@@ -12,12 +12,12 @@ export default {
         title: '',
         message: ''
       },
-      showModal: false // Estado para controlar a visibilidade do modal
+      showModal: false
     };
   },
   methods: {
     validateForm() {
-      // Reset error messages
+
       this.errors = {
         name: '',
         email: '',
@@ -27,7 +27,6 @@ export default {
 
       let isValid = true;
 
-      // Validate name: check if it's empty or contains numbers
       const nameRegex = /^[a-zA-Z\s]*$/;
       if (!this.name) {
         this.errors.name = 'O nome é obrigatório';
@@ -37,7 +36,7 @@ export default {
         isValid = false;
       }
 
-      // Validate email: check if it's empty or doesn't contain "@"
+
       if (!this.email) {
         this.errors.email = 'O email é obrigatório';
         isValid = false;
@@ -46,13 +45,13 @@ export default {
         isValid = false;
       }
 
-      // Validate title
+
       if (!this.title) {
         this.errors.title = 'O assunto é obrigatório';
         isValid = false;
       }
 
-      // Validate message
+
       if (!this.message) {
         this.errors.message = 'A mensagem é obrigatória';
         isValid = false;
@@ -62,7 +61,7 @@ export default {
     },
     submitForm() {
       if (this.validateForm()) {
-        this.showModal = true; // Mostrar modal em vez de alert
+        this.showModal = true;
       }
     },
     closeModal() {
@@ -126,12 +125,12 @@ export default {
 *,
 *::before,
 *::after {
-  box-sizing: border-box; /* Garante que padding e border sejam incluídos na largura/altura */
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  overflow-x: hidden; /* Evita rolagem horizontal */
+  overflow-x: hidden;
 }
 
 .background {
