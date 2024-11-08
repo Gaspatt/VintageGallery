@@ -170,6 +170,9 @@ input {
   background-color: #2d6d45;
 }
 
+a {
+  text-decoration: none;
+}
 .p-link {
   color: #fff;
   font-size: 14px;

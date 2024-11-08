@@ -150,7 +150,7 @@ i {
   color: rgb(0, 0, 0);
   border-radius: 10px;
   padding: 10px;
-  gap: 10px; 
+  gap: 10px;
 }
 
 .icon {
@@ -183,16 +183,15 @@ textarea {
 .btn-enviar {
   background-color: #1a1a1a;
   border: none;
-  height: 40px;
+  height: 45px;
   width: 30vh;
   color: white;
   border-radius: 10px;
   margin-top: 20px;
+  cursor: pointer;
+  transition: 0.7s;
 }
 
-.btn-enviar:hover {
-  background-color: #000000;
-}
 
 /* Estilos da mensagem centralizada */
 .confirmation-message {
@@ -211,26 +210,34 @@ textarea {
 
 /* Estilo para a mensagem de sucesso (verde) */
 .success {
+  font-size: 18px;
+  border-radius: 10px;
+  margin-top: -350px;
+  padding: 20px;
   background-color: #ffffff;
   color: #155724;
-  border: 3px solid #000000;
+  border: 2px solid #000000;
 }
 
 /* Estilo para a mensagem de erro (vermelho) */
 .error {
+  font-size: 18px;
+  border-radius: 10px;
+  margin-top: -350px;
+  padding: 20px;
   background-color: #ffffff;
-  color: #721c24;
+  color: #ff0000;
   border: 1px solid #f5c6cb;
-  border: 3px solid black;
+  border: 3px solid rgb(0, 0, 0);
 }
 
 /* Estilo do botão "OK" */
 .btn-close {
   margin-top: 15px;
-  padding: 8px;
+  padding: 10px;
   font-size: 0.9em;
   color: #fff;
-  background-color: #4a1f66;
+  background-color: #000000;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -239,7 +246,11 @@ textarea {
 }
 
 .btn-close:hover {
-  background-color: #210335;
+  background-color: #000000;
+}
+
+.btn-enviar:hover {
+  background-color: rgb(95, 95, 95);
 }
 
 @keyframes slideUp {

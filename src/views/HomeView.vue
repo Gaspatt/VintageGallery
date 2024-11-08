@@ -2,7 +2,6 @@
 import { useRouter } from 'vue-router';
 import { useCarStore } from '../stores/carStore';
 import HeaderHome from '@/components/HeaderHome.vue';
-import HomePage from '@/components/HomePage.vue';
 import FooterHome from '@/components/FooterHome.vue';
 
 
@@ -233,8 +232,6 @@ const rentCar = (car) => {
 
 <template>
   <HeaderHome></HeaderHome>
-  <HomePage></HomePage>
-  <FooterHome></FooterHome>
   <section id="secback">
     <div class="homeback">
       <div class="txt">
@@ -282,6 +279,7 @@ const rentCar = (car) => {
       </div>
     </div>
   </main>
+  <FooterHome />
 </template>
 
 <style scoped>
