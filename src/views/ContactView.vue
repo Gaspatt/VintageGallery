@@ -6,6 +6,7 @@ export default {
       email: '',
       title: '',
       message: '',
+
       errors: {
         name: '',
         email: '',
@@ -110,7 +111,7 @@ export default {
       <button class="btn-enviar" @click="submitForm">ENVIAR</button>
     </div>
 
-    <!-- Modal -->
+    
     <div v-if="showModal" class="modal">
       <div class="modal-content">
         <p>Formulário enviado com sucesso!</p>
