@@ -1,20 +1,50 @@
 <script setup>
 import { reactive, ref } from 'vue'
 
-const validacao = ref(false)
-
-
+const validacaoNome = ref(false)
+const validacaoEmail = ref(false)
+const validacaoAssunto = ref(false)
+const validacaoTexto = ref(false)
 
 const dados = reactive({
   nome: '',
-  senha: '',
+  email: '',
+  assunto: '',
+  texto: '',
 })
 
 function teste() {
   if (dados.nome == "") {
-    validacao.value = !validacao.value
+    validacaoNome.value = true
   }
-  
+  else{
+    validacaoNome.value = false
+  }
+
+
+  if (dados.email == "") {
+    validacaoEmail.value = true
+  }
+
+  else{
+    validacaoEmail.value = false
+  }
+
+
+  if (dados.assunto == "") {
+    validacaoAssunto.value = true
+  }
+  else{
+    validacaoAssunto.value = false
+  }
+
+  if (dados.texto == "") {
+    validacaoTexto.value = true
+  }
+  else{
+    validacaoTexto.value = false
+  }
+
 }
 
 </script>
@@ -32,25 +62,28 @@ function teste() {
         <i class="fas fa-user icon"></i>
         <input type="text" name="name" placeholder="Nome:" v-model="dados.nome"/>
       </div>
-      <p v-if="validacao">ERRO!</p>
-      
+      <p class="error" v-if="validacaoNome">ERRO!</p>
+
 
       <div class="input-group">
         <i class="fas fa-envelope icon"></i>
-        <input type="email" name="email" placeholder="Email:">
+        <input type="email" name="email" placeholder="Email:" v-model="dados.email">
       </div>
-      
+      <p class="error" v-if="validacaoEmail">Erro!</p>
+
 
       <div class="input-group">
         <i class="fas fa-tag icon"></i>
-        <input type="text" name="title" placeholder="Assunto:"/>
+        <input type="text" name="title" placeholder="Assunto:" v-model="dados.assunto"/>
       </div>
-      
+      <p class="error" v-if="validacaoAssunto">Erro!</p>
+
 
       <div class="input-group">
-        <textarea name="text" placeholder="Fale aqui!"></textarea>
+        <textarea name="text" placeholder="Fale aqui!" v-model="dados.texto"></textarea>
       </div>
-      
+      <p class="error" v-if="validacaoTexto">Erro</p>
+
 
       <button class="btn-enviar" @click="teste">ENVIAR</button>
     </div>
@@ -76,7 +109,7 @@ body {
   align-items: center;
   justify-content: center;
   background-color: rgb(247, 244, 244);
-  width: 100%; 
+  width: 100%;
   height: 100vh;
   position: relative;
 }
@@ -128,6 +161,7 @@ Enrique
 .error {
   font-size: 12px;
   color: red;
+
 }
 
 .icon {
