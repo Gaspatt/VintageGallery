@@ -1,79 +1,22 @@
-<script>
-export default {
-  data() {
-    return {
-      name: '',
-      email: '',
-      title: '',
-      message: '',
+<script setup>
+import { reactive, ref } from 'vue'
 
-      errors: {
-        name: '',
-        email: '',
-        title: '',
-        message: ''
-      },
-      showModal: false
-    };
-  },
-  methods: {
-    validateForm() {
-
-      this.errors = {
-        name: '',
-        email: '',
-        title: '',
-        message: ''
-      };
-
-      let isValid = true;
-
-      const nameRegex = /^[a-zA-Z\s]*$/;
-      if (!this.name) {
-        this.errors.name = 'O nome é obrigatório';
-        isValid = false;
-      } else if (!nameRegex.test(this.name)) {
-        this.errors.name = 'O nome não pode conter números';
-        isValid = false;
-      }
+const validacao = ref(false)
 
 
-      if (!this.email) {
-        this.errors.email = 'O email é obrigatório';
-        isValid = false;
-      } else if (!this.email.includes('@')) {
-        this.errors.email = 'O email deve conter "@"';
-        isValid = false;
-      }
 
+const dados = reactive({
+  nome: '',
+  senha: '',
+})
 
-      if (!this.title) {
-        this.errors.title = 'O assunto é obrigatório';
-        isValid = false;
-      }
-
-
-      if (!this.message) {
-        this.errors.message = 'A mensagem é obrigatória';
-        isValid = false;
-      }
-
-      return isValid;
-    },
-    submitForm() {
-      if (this.validateForm()) {
-        this.showModal = true;
-      }
-    },
-    closeModal() {
-      this.showModal = false;
-      this.name = '';
-      this.email = '';
-      this.title = '';
-      this.message = '';
-    }
+function teste() {
+  if (dados.nome == "") {
+    validacao.value = !validacao.value
   }
-};
+  
+}
+
 </script>
 
 <template>
@@ -87,36 +30,29 @@ export default {
 
       <div class="input-group">
         <i class="fas fa-user icon"></i>
-        <input type="text" name="name" placeholder="Nome:" v-model="name" />
+        <input type="text" name="name" placeholder="Nome:" v-model="dados.nome"/>
       </div>
-      <div v-if="errors.name" class="error">{{ errors.name }}</div>
+      <p v-if="validacao">ERRO!</p>
+      
 
       <div class="input-group">
         <i class="fas fa-envelope icon"></i>
-        <input type="email" name="email" placeholder="Email:" v-model="email" />
+        <input type="email" name="email" placeholder="Email:">
       </div>
-      <div v-if="errors.email" class="error">{{ errors.email }}</div>
+      
 
       <div class="input-group">
         <i class="fas fa-tag icon"></i>
-        <input type="text" name="title" placeholder="Assunto:" v-model="title" />
+        <input type="text" name="title" placeholder="Assunto:"/>
       </div>
-      <div v-if="errors.title" class="error">{{ errors.title }}</div>
+      
 
       <div class="input-group">
-        <textarea name="text" placeholder="Fale aqui!" v-model="message"></textarea>
+        <textarea name="text" placeholder="Fale aqui!"></textarea>
       </div>
-      <div v-if="errors.message" class="error">{{ errors.message }}</div>
+      
 
-      <button class="btn-enviar" @click="submitForm">ENVIAR</button>
-    </div>
-
-    
-    <div v-if="showModal" class="modal">
-      <div class="modal-content">
-        <p>Formulário enviado com sucesso!</p>
-        <button @click="closeModal">OK</button>
-      </div>
+      <button class="btn-enviar" @click="teste">ENVIAR</button>
     </div>
   </div>
 </template>
@@ -140,7 +76,7 @@ body {
   align-items: center;
   justify-content: center;
   background-color: rgb(247, 244, 244);
-  width: 100%; /* Ajuste para 100% */
+  width: 100%; 
   height: 100vh;
   position: relative;
 }
@@ -157,7 +93,7 @@ body {
   left: 20px;
   transition: 0.3s;
 }
-
+Enrique
 .back:hover {
   background: transparent;
   color: #000000;
@@ -240,39 +176,7 @@ textarea {
   background-color: rgb(95, 95, 95);
 }
 
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-.modal-content {
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  width: 400px;
-}
-
-.modal-content button {
-  margin-top: 15px;
-  padding: 10px 20px;
-  background-color: #1a1a1a;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.modal-content button:hover {
-  background-color: rgb(95, 95, 95);
-}
 
 @keyframes slideUp {
   0% {
@@ -285,7 +189,6 @@ textarea {
   }
 }
 
-/* Estilos responsivos para telas menores */
 @media (max-width: 768px) {
   .form {
     width: 90%;
