@@ -72,9 +72,9 @@ onMounted(() => {
         <li class="nav-item">
           <router-link to="/" class="nav-link">HOME</router-link>
         </li>
-        <!-- <li class="nav-item">
+        <li class="nav-item">
           <router-link to="/cars" class="nav-link">CARROS</router-link>
-        </li> -->
+        </li>
         <li class="nav-item">
           <router-link to="/contact" class="nav-link">CONTATO</router-link>
         </li>

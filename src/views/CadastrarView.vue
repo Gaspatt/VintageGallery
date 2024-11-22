@@ -15,7 +15,7 @@ const errors = ref({
   confirmPassword: '',
   birthdate: ''
 });
-const successMessage = ref(''); // Mensagem de sucesso
+const successMessage = ref('');
 
 function togglePasswordVisibility() {
   showPassword.value = !showPassword.value;

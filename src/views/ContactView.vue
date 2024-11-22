@@ -126,7 +126,7 @@ body {
   left: 20px;
   transition: 0.3s;
 }
-Enrique
+
 .back:hover {
   background: transparent;
   color: #000000;
@@ -138,12 +138,10 @@ Enrique
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgb(255, 255, 255);
   width: 500px;
   padding: 30px;
   border-radius: 10px;
   gap: 15px;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   animation: slideUp 2s ease-out;
 }
 
@@ -151,7 +149,7 @@ Enrique
   display: flex;
   align-items: center;
   width: 100%;
-  background-color: rgb(236, 234, 234);
+  background-color: rgb(214, 213, 213);
   color: rgb(0, 0, 0);
   border-radius: 10px;
   padding: 10px;
@@ -189,17 +187,18 @@ textarea {
   font-size: 25px;
   margin-bottom: 20px;
   color: #000000;
+  font-weight: bold;
 }
 
 .btn-enviar {
   background-color: #1a1a1a;
   border: none;
   height: 45px;
-  width: 30vh;
+  width: 100%;
   color: white;
   border-radius: 10px;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 10px;
   cursor: pointer;
   transition: 0.7s;
   display: flex;
