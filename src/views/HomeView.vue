@@ -263,7 +263,9 @@ const rentCar = (car) => {
       </div>
     </section>
 
-    <div class="row carros">
+    <div class="conatiner">
+
+      <div class="row carros">
       <div class="col-sm-2 uni-carros" v-for="car in cars" :key="car.id">
         <img :src="car.image" :alt="car.name">
         <div class="textocarro">
@@ -278,6 +280,10 @@ const rentCar = (car) => {
         </div>
       </div>
     </div>
+
+    </div>
+
+
   </main>
   <FooterHome />
 </template>

@@ -75,6 +75,7 @@
   color: #fff;
   font-size: 10pt;
 }
+
 }
 
 /*ANIMAÇÃO*/
