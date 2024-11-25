@@ -56,18 +56,20 @@ function togglePasswordVisibility() {
   width: 100%;
   height: 100vh;
   position: relative;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .back {
-  width: 60px;
-  height: 60px;
+  width: 50px; 
+  height: 50px;
   border: none;
   color: #ffffff;
   background-color: #000000;
-  border-radius: 50px;
+  border-radius: 50%;
   position: absolute;
-  top: 20px;
-  left: 20px;
+  top: 10px;
+  left: 10px;
   transition: 0.3s;
 }
 
@@ -82,11 +84,13 @@ function togglePasswordVisibility() {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 500px;
-  padding: 30px;
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
   border-radius: 10px;
   gap: 15px;
   animation: slideUp 2s ease-out;
+
 }
 
 .input-group {
@@ -121,6 +125,7 @@ textarea {
   border: none;
   height: 45px;
   width: 100%;
+  max-width: 500px;
   color: white;
   border-radius: 10px;
   align-items: center;
@@ -136,9 +141,9 @@ textarea {
 }
 
 .title {
-  font-size: 30px;
+  font-size: 24px;
   font-weight: bold;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   color: #000000;
 }
 
@@ -152,4 +157,52 @@ textarea {
     transform: translateY(0);
   }
 }
+
+
+@media (max-width: 768px) {
+  .form {
+    padding: 15px;
+  }
+
+  .back {
+    margin-top: 15px;
+    margin-left: 15px;
+    width: 50px;
+    height: 50px;
+    top: 5px;
+    left: 5px;
+  }
+
+  .btn-enviar {
+    margin-top: 30px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .background {
+    padding: 10px;
+  }
+
+  .form {
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .input-group {
+    padding: 8px;
+  }
+
+  .btn-enviar {
+    font-size: 14px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+}
 </style>
+
