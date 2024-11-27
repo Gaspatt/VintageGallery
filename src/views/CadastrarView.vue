@@ -1,5 +1,20 @@
 <script setup>
+import { ref } from 'vue';
+import { useUserStore } from '../stores/user';
+import { useRouter } from 'vue-router';
 
+const email = ref('');
+const password = ref('');
+const userStore = useUserStore();
+const router = useRouter();
+
+function register() {
+  if (userStore.register(email.value, password.value)) {
+    router.push('/');
+  } else {
+    alert('Registration failed');
+  }
+}
 </script>
 
 <template>
@@ -19,17 +34,17 @@
 
       <div class="input-group">
         <i class="fas fa-envelope icon"></i>
-        <input type="email" name="email" placeholder="Email:"/>
+        <input type="email" name="email" placeholder="Email:" v-model="email" />
       </div>
 
 
       <div class="input-group">
         <i class="fas fa-lock icon"></i>
         <input
-          :type="showPassword ? 'text' : 'password'"
+          type="password"
           name="password"
           placeholder="Senha"
-
+          v-model="password"
         />
         <i
           :class="showPassword ? 'fas fa-eye-slash icon' : 'fas fa-eye icon'"
@@ -61,7 +76,7 @@
       </div>
 
 
-      <button class="btn-enviar">CADASTRAR</button>
+      <button class="btn-enviar" @click="register">CADASTRAR</button>
 
 
       <p>Ja se cadastrou? <RouterLink to="/login">clique aqui</RouterLink></p>

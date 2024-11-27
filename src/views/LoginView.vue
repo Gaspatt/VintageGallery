@@ -1,12 +1,25 @@
 <script setup>
 import { ref } from 'vue';
+import { useUserStore } from '../stores/user';
+import { useRouter } from 'vue-router';
 
 const email = ref('');
 const password = ref('');
 const showPassword = ref(false);
+const userStore = useUserStore();
+const router = useRouter();
 
 function togglePasswordVisibility() {
   showPassword.value = !showPassword.value;
+}
+
+function login() {
+  if (userStore.login(email.value, password.value)) {
+    alert('Logado com sucesso');
+    router.push('/');
+  } else {
+    alert('Há um erro nas credenciais ou email');
+  }
 }
 </script>
 
@@ -39,7 +52,7 @@ function togglePasswordVisibility() {
         ></i>
       </div>
 
-      <button class="btn-enviar">CADASTRAR</button>
+      <button class="btn-enviar" @click="login">LOGIN</button>
 
       <p>Não possui cadastro? <RouterLink to="/cadastrar">clique aqui</RouterLink></p>
     </div>
@@ -61,7 +74,7 @@ function togglePasswordVisibility() {
 }
 
 .back {
-  width: 50px; 
+  width: 50px;
   height: 50px;
   border: none;
   color: #ffffff;
