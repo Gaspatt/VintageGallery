@@ -259,27 +259,31 @@ const rentCar = (car) => {
       </div>
       <div class="textosobre">
         <h1>Vintage Gallery</h1>
-        <p>Bem-vindo à Vintage DGallery, onde o encanto do passado encontra o prazer de dirigir. Somos uma empresa especializada na locação de carros vintage, oferecendo uma seleção exclusiva de veículos clássicos para tornar momentos especiais ainda mais inesquecíveis. Nosso objetivo é proporcionar uma experiência autêntica e sofisticada, permitindo que nossos clientes vivam o charme e a elegância de outra época, com toda a comodidade moderna.</p>
+        <p>Bem-vindo à Vintage DGallery, onde o encanto do passado encontra o prazer de dirigir. Somos uma empresa
+          especializada na locação de carros vintage, oferecendo uma seleção exclusiva de veículos clássicos para tornar
+          momentos especiais ainda mais inesquecíveis. Nosso objetivo é proporcionar uma experiência autêntica e
+          sofisticada, permitindo que nossos clientes vivam o charme e a elegância de outra época, com toda a comodidade
+          moderna.</p>
       </div>
     </section>
 
     <div class="conatiner">
 
       <div class="row carros">
-      <div class="col-sm-2 uni-carros" v-for="car in cars" :key="car.id">
-        <img :src="car.image" :alt="car.name">
-        <div class="textocarro">
-          <span>{{ car.name }}</span>
-          <ul>
-            <li><i class="bi bi-gear-fill"></i>{{ car.brand }}</li>
-            <li><i class="bi bi-speedometer"></i>{{ car.year }}</li>
-          </ul>
-          <div class="botaocarro">
-            <button class="btn btn-dark botao-carro" @click="rentCar(car)">Alugar</button>
+        <div class="col-sm-2 uni-carros" v-for="car in cars" :key="car.id">
+          <img :src="car.image" :alt="car.name">
+          <div class="textocarro">
+            <span>{{ car.name }}</span>
+            <ul>
+              <li><i class="bi bi-gear-fill"></i>{{ car.brand }}</li>
+              <li><i class="bi bi-speedometer"></i>{{ car.year }}</li>
+            </ul>
+            <div class="botaocarro">
+              <button class="btn btn-dark botao-carro" @click="rentCar(car)">Alugar</button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
     </div>
 
@@ -289,7 +293,6 @@ const rentCar = (car) => {
 </template>
 
 <style scoped>
-
 .carros {
   display: flex;
   justify-content: center;
@@ -299,11 +302,11 @@ const rentCar = (car) => {
   margin-top: 5vh;
   margin-bottom: 15vh;
   text-align: center;
-  }
+}
 
-  .botao-carro {
-    margin-bottom: 15px;
-  }
+.botao-carro {
+  margin-bottom: 15px;
+}
 
 /*div sobre nós */
 
@@ -533,5 +536,4 @@ swiper-slide img {
 .carrossel {
   height: 600px;
 }
-
 </style>
