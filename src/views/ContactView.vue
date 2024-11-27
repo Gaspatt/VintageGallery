@@ -1,53 +1,6 @@
-<script>
-import { ref, computed } from 'vue';
+<script setup>
 
-export default {
-  setup() {
-    // Variáveis reativas para os campos do formulário
-    const name = ref('');
-    const email = ref('');
-    const title = ref('');
-    const message = ref('');
 
-    // Variável reativa para armazenar o estado de preenchimento
-    const formStatus = ref(null); // null: sem mensagem, 'success': sucesso, 'error': erro
-
-    // Computed para verificar se todos os campos estão preenchidos
-    const allFieldsFilled = computed(() => {
-      return name.value && email.value && title.value && message.value;
-    });
-
-    // Função para exibir a mensagem com base no status do formulário
-    const msg = () => {
-      if (allFieldsFilled.value) {
-        formStatus.value = 'success';
-      } else {
-        formStatus.value = 'error';
-      }
-    };
-
-    // Função para fechar a mensagem e resetar os campos se for sucesso
-    const closeMessage = () => {
-      if (formStatus.value === 'success') {
-        name.value = '';
-        email.value = '';
-        title.value = '';
-        message.value = '';
-      }
-      formStatus.value = null;
-    };
-
-    return {
-      name,
-      email,
-      title,
-      message,
-      formStatus,
-      msg,
-      closeMessage
-    };
-  }
-};
 </script>
 
 <template>
@@ -61,46 +14,56 @@ export default {
 
       <div class="input-group">
         <i class="fas fa-user icon"></i>
-        <input type="text" name="name" placeholder="Nome:" v-model="name" />
+        <input type="text" name="name" placeholder="Nome:"/>
       </div>
+
+
 
       <div class="input-group">
         <i class="fas fa-envelope icon"></i>
-        <input type="email" name="email" placeholder="Email:" v-model="email" />
+        <input type="email" name="email" placeholder="Email:">
       </div>
+
+
 
       <div class="input-group">
         <i class="fas fa-tag icon"></i>
-        <input type="text" name="title" placeholder="Assunto:" v-model="title" />
+        <input type="text" name="title" placeholder="Assunto:"/>
       </div>
+
+
 
       <div class="input-group">
-        <textarea name="text" placeholder="Fale aqui!" v-model="message"></textarea>
+        <textarea name="text" placeholder="Fale aqui!"></textarea>
       </div>
 
-      <button @click="msg()" class="btn-enviar">ENVIAR</button>
-    </div>
 
-    <!-- Mensagem de sucesso ou erro centralizada com botão "OK" para fechar -->
-    <div v-if="formStatus === 'success'" class="confirmation-message success">
-      <p>TODOS OS CAMPOS FORAM PREENCHIDOS COM SUCESSO! ENTRAREMOS EM CONTATO PELO EMAIL</p>
-      <button class="btn-close" @click="closeMessage">OK</button>
-    </div>
-    <div v-if="formStatus === 'error'" class="confirmation-message error">
-      <p>POR FAVOR, PREENCHA TODOS OS CAMPOS.</p>
-      <button class="btn-close" @click="closeMessage">OK</button>
+
+      <button class="btn-enviar">ENVIAR</button>
     </div>
   </div>
 </template>
 
+
 <style scoped>
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
 .background {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to right, #17221b, #30835d);
-  width: 100vw;
+  background-color: rgb(247, 244, 244);
+  width: 100%;
   height: 100vh;
   position: relative;
 }
@@ -109,8 +72,8 @@ export default {
   width: 60px;
   height: 60px;
   border: none;
-  color: #000000;
-  background-color: #fff;
+  color: #ffffff;
+  background-color: #000000;
   border-radius: 50px;
   position: absolute;
   top: 20px;
@@ -120,12 +83,8 @@ export default {
 
 .back:hover {
   background: transparent;
-  color: #fff;
-  border: 2px solid #fff;
-}
-
-i {
-  font-size: 20px;
+  color: #000000;
+  border: 2px solid #000000;
 }
 
 .form {
@@ -133,42 +92,44 @@ i {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgb(26, 24, 24);
   width: 500px;
   padding: 30px;
   border-radius: 10px;
   gap: 15px;
+  animation: slideUp 2s ease-out;
 }
 
 .input-group {
   display: flex;
   align-items: center;
   width: 100%;
-  background-color: rgb(41, 41, 41);
-  color: white;
+  background-color: rgb(214, 213, 213);
+  color: rgb(0, 0, 0);
   border-radius: 10px;
   padding: 10px;
+  gap: 10px;
 }
 
-.input-group:hover {
-  background-color: rgb(27, 24, 24);
-  color: white;
-  border: none;
+.error {
+  font-size: 12px;
+  color: red;
+
 }
 
 .icon {
-  color: #888;
+  font-size: 20px;
+  color: #000000;
   margin-right: 10px;
 }
 
-input, textarea {
-  width: 100%;
+input,
+textarea {
+  flex: 1;
   border: none;
   background: none;
   color: #000000;
   outline: none;
   font-size: 16px;
-  color: white;
 }
 
 textarea {
@@ -179,68 +140,74 @@ textarea {
 .title {
   font-size: 25px;
   margin-bottom: 20px;
-  color: #ffffff;
+  color: #000000;
+  font-weight: bold;
 }
 
 .btn-enviar {
-  background-color: #2a5239;
+  background-color: #1a1a1a;
   border: none;
-  height: 40px;
-  width: 30vh;
+  height: 45px;
+  width: 100%;
   color: white;
   border-radius: 10px;
-  margin-top: 20px;
+  align-items: center;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: 0.7s;
+  display: flex;
+  justify-content: center;
 }
 
 .btn-enviar:hover {
-  background-color: #2d6d45;
+  background-color: rgb(95, 95, 95);
 }
 
-/* Estilos da mensagem centralizada */
-.confirmation-message {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 20px;
-  text-align: center;
-  font-size: 1.0em;
-  font-weight: bold;
-  width: 80%;
-  max-width: 500px;
-  z-index: 1000;
+
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* Estilo para a mensagem de sucesso (verde) */
-.success {
-  background-color: #ffffff;
-  color: #155724;
-  border: 3px solid #000000;
-}
+@media (max-width: 768px) {
+  .form {
+    width: 90%;
+    padding: 20px;
+    gap: 10px;
+  }
 
-/* Estilo para a mensagem de erro (vermelho) */
-.error {
-  background-color: #ffffff;
-  color: #721c24;
-  border: 1px solid #f5c6cb;
-  border: 3px solid black;
-}
+  .input-group {
+    padding: 8px;
+  }
 
-/* Estilo do botão "OK" */
-.btn-close {
-  margin-top: 15px;
-  padding: 8px;
-  font-size: 0.9em;
-  color: #fff;
-  background-color: #4a1f66;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
-  width: 100px;
-}
+  input,
+  textarea {
+    font-size: 14px;
+  }
 
-.btn-close:hover {
-  background-color: #210335;
+  .btn-enviar {
+    width: 100%;
+    height: 40px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .back {
+    margin-top: 15px;
+    margin-left: 15px;
+    width: 50px;
+    height: 50px;
+    top: 5px;
+    left: 5px;
+  }
 }
 </style>

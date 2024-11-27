@@ -2,6 +2,8 @@
 import { useRouter } from 'vue-router';
 import { useCarStore } from '../stores/carStore';
 import HeaderHome from '@/components/HeaderHome.vue';
+import FooterHome from '@/components/FooterHome.vue';
+
 
 const router = useRouter();
 const carStore = useCarStore();
@@ -240,6 +242,7 @@ const rentCar = (car) => {
     </div>
   </section>
   <main>
+
     <div class="carrossel">
       <swiper-container navigation="true" space-between="670" slides-per-view="3">
         <swiper-slide><img src="/src/assets/imagens/carro2.png" alt="carro1"></swiper-slide>
@@ -260,7 +263,9 @@ const rentCar = (car) => {
       </div>
     </section>
 
-    <div class="row carros">
+    <div class="conatiner">
+
+      <div class="row carros">
       <div class="col-sm-2 uni-carros" v-for="car in cars" :key="car.id">
         <img :src="car.image" :alt="car.name">
         <div class="textocarro">
@@ -276,21 +281,24 @@ const rentCar = (car) => {
       </div>
     </div>
 
+    </div>
+
+
   </main>
+  <FooterHome />
 </template>
 
 <style scoped>
 
 .carros {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-top: 5vh;
-    text-align: center;
-    gap: 20px;
-    row-gap: 50px;
-    margin-bottom: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 5vh;
+  margin-bottom: 15vh;
+  text-align: center;
   }
 
   .botao-carro {
@@ -299,14 +307,80 @@ const rentCar = (car) => {
 
 /*div sobre nós */
 
+
 .sobre {
-  background-color: rgb(14 14 14);
-  height: 100vh;
+  background-color: rgb(14, 14, 14);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  padding: 20px;
+  gap: 20px;
 }
+
+/* Imagem na seção "sobre" */
+.imgsobre img {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  object-fit: cover;
+  margin: 20px;
+}
+
+/* Texto na seção "sobre" */
+.textosobre {
+  color: #fff;
+  max-width: 600px;
+  padding: 10px;
+  text-align: center;
+}
+
+.textosobre h1 {
+  font-size: 2.5em;
+  margin-bottom: 1em;
+}
+
+.textosobre p {
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+/* Responsividade para telas menores sobre */
+@media (max-width: 768px) {
+  .sobre {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .textosobre h1 {
+    font-size: 2em;
+  }
+
+  .textosobre p {
+    font-size: 1em;
+  }
+
+  .imgsobre img {
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .textosobre h1 {
+    font-size: 1.5em;
+  }
+
+  .textosobre p {
+    font-size: 0.9em;
+  }
+
+  .imgsobre img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
 
 /*div img sobre nós */
 
@@ -392,6 +466,7 @@ swiper-slide {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: black;
 }
 
 swiper-slide img {
@@ -458,4 +533,5 @@ swiper-slide img {
 .carrossel {
   height: 600px;
 }
+
 </style>

@@ -72,9 +72,9 @@ onMounted(() => {
         <li class="nav-item">
           <router-link to="/" class="nav-link">HOME</router-link>
         </li>
-        <!-- <li class="nav-item">
+        <li class="nav-item">
           <router-link to="/cars" class="nav-link">CARROS</router-link>
-        </li> -->
+        </li>
         <li class="nav-item">
           <router-link to="/contact" class="nav-link">CONTATO</router-link>
         </li>
@@ -124,7 +124,7 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  min-width: 100%;
   z-index: 1000;
 }
 
@@ -151,14 +151,17 @@ header {
 /*botão*/
 
 .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centraliza o texto no botão */
   font-weight: bold;
   background-color: #fff;
   color: #000;
   border: none;
   border-radius: 5px;
-  transition: 0.3s;
   width: 90px;
   height: 30px;
+  transition: 0.3s;
 }
 
 .btn:hover {
@@ -179,6 +182,7 @@ header {
   position: relative;
   width: 300px;
   display: flex;
+  align-items: center; /* Centraliza o ícone verticalmente */
 }
 
 .search {
@@ -187,16 +191,15 @@ header {
   border-radius: 10px;
   padding: 5px 10px;
   padding-left: 35px;
-  transition: 0.3s;
   box-sizing: border-box;
+  transition: 0.3s;
 }
-
-/*icon barra de pesquisa*/
 
 .search-icon {
   position: absolute;
   left: 10px;
-  top: 6px;
+  top: 50%; /* Alinha o ícone verticalmente */
+  transform: translateY(-50%);
   color: #888;
   pointer-events: none;
 }
@@ -221,7 +224,7 @@ header {
 /*nav de baixo*/
 
 .nav-2 {
-  background-color: #292828;
+  background-color: #19191a;
   padding: 10px;
   transition: 0.3s;
 }

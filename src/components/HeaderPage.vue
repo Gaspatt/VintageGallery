@@ -45,7 +45,6 @@ onMounted(() => {
 
       <div :class="['nav-menu-lateral', { active: isMenuActive }]">
 
-
         <router-link to="/"><img src="/src/assets/imagens/logo.png" alt="logo" class="logo-img-lateral"></router-link>
 
         <i class="fas fa-times fa-2x" @click="toggleMenu"></i>
@@ -54,9 +53,9 @@ onMounted(() => {
           <li class="nav-item-mobile">
             <router-link to="/" class="nav-link-mobile">HOME</router-link>
           </li>
-          <!-- <li class="nav-item-mobile">
+          <li class="nav-item-mobile">
             <router-link to="/cars" class="nav-link-mobile">CARROS</router-link>
-          </li> -->
+          </li>
           <li class="nav-item-mobile">
             <router-link to="/contact" class="nav-link-mobile">CONTATO</router-link>
           </li>
@@ -64,7 +63,6 @@ onMounted(() => {
       </div>
 
       <!--nav bar-->
-
 
       <RouterLink to="/"> <img src="/src/assets/imagens/logo.png" alt="logo" class="logo-img">
       </RouterLink>
@@ -74,7 +72,7 @@ onMounted(() => {
         <li class="nav-item">
           <router-link to="/" class="nav-link">HOME</router-link>
         </li>
-        <li class="nav-item">
+         <li class="nav-item">
           <router-link to="/cars" class="nav-link">CARROS</router-link>
         </li>
         <li class="nav-item">
@@ -126,9 +124,8 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  min-width: 100%;
   z-index: 1000;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 /*nav de cima*/
@@ -138,8 +135,9 @@ header {
   align-items: center;
   background-color: #000;
   height: 50px;
-  padding: 20px;
+  padding: 40px;
   transition: 1s;
+
 }
 
 /*logo*/
@@ -153,14 +151,17 @@ header {
 /*botão*/
 
 .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centraliza o texto no botão */
   font-weight: bold;
   background-color: #fff;
   color: #000;
   border: none;
   border-radius: 5px;
-  transition: 0.3s;
   width: 90px;
   height: 30px;
+  transition: 0.3s;
 }
 
 .btn:hover {
@@ -181,6 +182,7 @@ header {
   position: relative;
   width: 300px;
   display: flex;
+  align-items: center; /* Centraliza o ícone verticalmente */
 }
 
 .search {
@@ -189,16 +191,15 @@ header {
   border-radius: 10px;
   padding: 5px 10px;
   padding-left: 35px;
-  transition: 0.3s;
   box-sizing: border-box;
+  transition: 0.3s;
 }
-
-/*icon barra de pesquisa*/
 
 .search-icon {
   position: absolute;
   left: 10px;
-  top: 6px;
+  top: 50%; /* Alinha o ícone verticalmente */
+  transform: translateY(-50%);
   color: #888;
   pointer-events: none;
 }
@@ -234,6 +235,7 @@ header {
   gap: 3rem;
   justify-content: center;
   margin-left: 120px;
+  margin-top: 2vh;
 }
 
 .nav-link {
@@ -320,6 +322,10 @@ header {
   color: rgb(255, 255, 255);
 }
 
+.nav-menu-lateral ul {
+  list-style: none;
+}
+
 .nav-menu-lateral {
   position: fixed;
   left: -100%;
@@ -336,7 +342,6 @@ header {
 }
 
 /*responsividade*/
-
 
 @media (max-width: 1200px) {
 
@@ -362,7 +367,6 @@ header {
   .nav-1 {
     height: 30px;
   }
-
 
   .btn {
     padding: 2px;
@@ -394,4 +398,5 @@ header {
   }
 
 }
+
 </style>
