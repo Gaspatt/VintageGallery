@@ -1,4 +1,5 @@
-<script setup></script>
+<script setup>
+</script>
 
 <template>
  <section id="secback">
@@ -75,6 +76,7 @@
   color: #fff;
   font-size: 10pt;
 }
+
 }
 
 /*ANIMAÇÃO*/

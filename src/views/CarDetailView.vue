@@ -3,6 +3,7 @@ import { useRoute } from 'vue-router'
 import { useCarStore } from '../stores/carStore'
 import { computed } from 'vue'
 import HeaderPage from '@/components/HeaderPage.vue'
+import FooterHome from '@/components/FooterHome.vue';
 
 const route = useRoute()
 const carStore = useCarStore()
@@ -58,10 +59,8 @@ const car = computed(() => carStore.selectedCar)
         <button class="btn btn-dark">Entrar em contato</button>
       </div>
     </div>
-    <p>drgdfkpjghdfoighdroiughdroighdroigdhroigdhriogdhriogdhijrop</p>
-
-    <br>
   </div>
+  <FooterHome></FooterHome>
 </template>
 
 <style scoped>

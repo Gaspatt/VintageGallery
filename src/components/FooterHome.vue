@@ -1,4 +1,5 @@
 <script setup>
+
 </script>
 
 <template>
@@ -9,11 +10,7 @@
     <div class="container">
       <div class="row">
         <div class="col" id="company">
-
-          <p>
-            Já imaginou chegar a um evento especial em um carro clássico, cheio de <br> charme e estilo?
-Com o aluguel de carros vintage, você pode transformar <br>qualquer ocasião em um momento inesquecível!
-          </p>
+          <p>Já imaginou chegar a um evento especial em um carro clássico, cheio de charme e estilo? Com o aluguel de carros vintage, você pode transformar qualquer ocasião em um momento inesquecível! </p>
           <div class="social">
             <a href="#"><i class="fab fa-facebook"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
@@ -29,7 +26,6 @@ Com o aluguel de carros vintage, você pode transformar <br>qualquer ocasião em
           <h3>Páginas</h3>
           <div class="links">
             <router-link to="/" class="nav-link-mobile">Home</router-link>
-            <router-link to="/cars" class="nav-link-mobile">Carros</router-link>
             <router-link to="/contact" class="nav-link-mobile">Contato</router-link>
           </div>
         </div>
@@ -69,8 +65,22 @@ Com o aluguel de carros vintage, você pode transformar <br>qualquer ocasião em
 
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+}
+
 footer {
-  bottom: 0;
   box-shadow: 0 0 70px 5px rgba(1, 1, 1, 0.5);
   background-color: #000000ff;
   width: 100%;
@@ -90,7 +100,6 @@ footer {
 .row {
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
 .col {
