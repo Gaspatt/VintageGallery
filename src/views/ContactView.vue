@@ -1,51 +1,5 @@
 <script setup>
-import { reactive, ref } from 'vue'
 
-const validacaoNome = ref(false)
-const validacaoEmail = ref(false)
-const validacaoAssunto = ref(false)
-const validacaoTexto = ref(false)
-
-const dados = reactive({
-  nome: '',
-  email: '',
-  assunto: '',
-  texto: '',
-})
-
-function teste() {
-  if (dados.nome == "") {
-    validacaoNome.value = true
-  }
-  else{
-    validacaoNome.value = false
-  }
-
-
-  if (dados.email == "") {
-    validacaoEmail.value = true
-  }
-
-  else{
-    validacaoEmail.value = false
-  }
-
-
-  if (dados.assunto == "") {
-    validacaoAssunto.value = true
-  }
-  else{
-    validacaoAssunto.value = false
-  }
-
-  if (dados.texto == "") {
-    validacaoTexto.value = true
-  }
-  else{
-    validacaoTexto.value = false
-  }
-
-}
 
 </script>
 
@@ -60,32 +14,32 @@ function teste() {
 
       <div class="input-group">
         <i class="fas fa-user icon"></i>
-        <input type="text" name="name" placeholder="Nome:" v-model="dados.nome"/>
+        <input type="text" name="name" placeholder="Nome:"/>
       </div>
-      <p class="error" v-if="validacaoNome">ERRO!</p>
+
 
 
       <div class="input-group">
         <i class="fas fa-envelope icon"></i>
-        <input type="email" name="email" placeholder="Email:" v-model="dados.email">
+        <input type="email" name="email" placeholder="Email:">
       </div>
-      <p class="error" v-if="validacaoEmail">Erro!</p>
+
 
 
       <div class="input-group">
         <i class="fas fa-tag icon"></i>
-        <input type="text" name="title" placeholder="Assunto:" v-model="dados.assunto"/>
+        <input type="text" name="title" placeholder="Assunto:"/>
       </div>
-      <p class="error" v-if="validacaoAssunto">Erro!</p>
+
 
 
       <div class="input-group">
-        <textarea name="text" placeholder="Fale aqui!" v-model="dados.texto"></textarea>
+        <textarea name="text" placeholder="Fale aqui!"></textarea>
       </div>
-      <p class="error" v-if="validacaoTexto">Erro</p>
 
 
-      <button class="btn-enviar" @click="teste">ENVIAR</button>
+
+      <button class="btn-enviar">ENVIAR</button>
     </div>
   </div>
 </template>
@@ -126,7 +80,7 @@ body {
   left: 20px;
   transition: 0.3s;
 }
-Enrique
+
 .back:hover {
   background: transparent;
   color: #000000;
@@ -138,12 +92,10 @@ Enrique
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgb(255, 255, 255);
   width: 500px;
   padding: 30px;
   border-radius: 10px;
   gap: 15px;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   animation: slideUp 2s ease-out;
 }
 
@@ -151,7 +103,7 @@ Enrique
   display: flex;
   align-items: center;
   width: 100%;
-  background-color: rgb(236, 234, 234);
+  background-color: rgb(214, 213, 213);
   color: rgb(0, 0, 0);
   border-radius: 10px;
   padding: 10px;
@@ -189,17 +141,18 @@ textarea {
   font-size: 25px;
   margin-bottom: 20px;
   color: #000000;
+  font-weight: bold;
 }
 
 .btn-enviar {
   background-color: #1a1a1a;
   border: none;
   height: 45px;
-  width: 30vh;
+  width: 100%;
   color: white;
   border-radius: 10px;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 10px;
   cursor: pointer;
   transition: 0.7s;
   display: flex;
@@ -246,6 +199,15 @@ textarea {
 
   .title {
     font-size: 20px;
+  }
+
+  .back {
+    margin-top: 15px;
+    margin-left: 15px;
+    width: 50px;
+    height: 50px;
+    top: 5px;
+    left: 5px;
   }
 }
 </style>
