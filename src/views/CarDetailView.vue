@@ -3,7 +3,7 @@ import { useRoute } from 'vue-router'
 import { useCarStore } from '../stores/carStore'
 import { computed } from 'vue'
 import HeaderPage from '@/components/HeaderPage.vue'
-import FooterHome from '@/components/FooterHome.vue';
+import FooterHome from '@/components/FooterHome.vue'
 
 const route = useRoute()
 const carStore = useCarStore()
@@ -36,7 +36,9 @@ const car = computed(() => carStore.selectedCar)
         </div>
       </div>
       <div class="espec-carro">
+        <span class="favorite-icon"><i class="fas fa-heart"></i></span>
         <h4>{{ car.name }}</h4>
+
         <hr class="mt-30 mb-30 d-none d-lg-block" />
         <dl class="atributes mb-40">
           <dt>Marca</dt>
@@ -64,6 +66,19 @@ const car = computed(() => carStore.selectedCar)
 </template>
 
 <style scoped>
+.favorite-icon {
+  font-size: 20px;
+  color: #000000;
+  cursor: pointer;
+  transition: 0.3s;
+  position: absolute;
+  left: 33vh;
+}
+
+.favorite-icon:hover {
+  color: rgb(212, 4, 4);
+}
+
 .main-carro {
   display: flex;
   flex-wrap: nowrap;
@@ -73,7 +88,6 @@ const car = computed(() => carStore.selectedCar)
 .detalhe-carro {
   display: flex;
   flex-wrap: wrap;
-
 }
 
 .dados-carro {
@@ -84,8 +98,6 @@ const car = computed(() => carStore.selectedCar)
 .dados-carro h4 {
   font-size: 1.5rem;
 }
-
-
 
 .img-carro {
   width: 100%;
@@ -131,7 +143,6 @@ const car = computed(() => carStore.selectedCar)
   top: 10%;
   margin-top: 10vh;
   height: 40%;
-
 }
 
 .espec-carro button {
