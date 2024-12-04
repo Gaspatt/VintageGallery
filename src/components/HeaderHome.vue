@@ -1,6 +1,9 @@
 <script setup>
 
 import { ref, onMounted } from 'vue';
+import { useAuth } from '../auth';
+
+const { user } = useAuth();
 
 const isMenuActive = ref(false);
 const isTransparent = ref(true);
@@ -97,8 +100,10 @@ onMounted(() => {
         </div>
 
 
-        <button @click="btnlogin" class="btn"><router-link to="/login"
-            class="nav-link-login">LOGIN</router-link></button>
+            <RouterLink v-if="!user" to="/login" class="nav-link-login btn">LOGIN</RouterLink>
+        <RouterLink v-else to="/profile">
+          <i class="fas fa-user"></i>
+        </RouterLink>
       </div>
 
 

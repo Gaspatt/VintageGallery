@@ -1,5 +1,35 @@
 <script setup>
+import { ref } from 'vue';
+import { supabase } from '../supabase';
 
+const email = ref('');
+const password = ref('');
+const name = ref('');
+const birthdate = ref('');
+const errorMessage = ref('');
+const successMessage = ref('');
+
+async function register() {
+  const { data, error } = await supabase.auth.signUp({
+    email: email.value,
+    password: password.value,
+  });
+
+  if (error) {
+    errorMessage.value = error.message;
+  } else {
+    const { error: profileError } = await supabase
+      .from('profiles')
+      .insert([{ id: data.user.id, name: name.value, birthdate: birthdate.value }]);
+
+    if (profileError) {
+      errorMessage.value = profileError.message;
+    } else {
+      successMessage.value = 'Registro bem-sucedido! Você pode fazer login agora.';
+      errorMessage.value = '';
+    }
+  }
+}
 </script>
 
 <template>
@@ -13,23 +43,23 @@
 
       <div class="input-group">
         <i class="fas fa-user icon"></i>
-        <input type="text" name="name" placeholder="Nome:" />
+        <input type="text" name="name" placeholder="Nome" v-model="name" />
       </div>
 
 
       <div class="input-group">
         <i class="fas fa-envelope icon"></i>
-        <input type="email" name="email" placeholder="Email:"/>
+        <input type="email" name="email" placeholder="Email:" v-model="email" />
       </div>
 
 
       <div class="input-group">
         <i class="fas fa-lock icon"></i>
         <input
-          :type="showPassword ? 'text' : 'password'"
+          type="password"
           name="password"
           placeholder="Senha"
-
+          v-model="password"
         />
         <i
           :class="showPassword ? 'fas fa-eye-slash icon' : 'fas fa-eye icon'"
@@ -57,11 +87,13 @@
 
       <div class="input-group">
         <i class="fas fa-calendar icon"></i>
-        <input type="date" name="birthdate" placeholder="Data de Nascimento" />
+        <input type="date" name="birthdate" placeholder="Data de Nascimento" v-model="birthdate" />
       </div>
 
 
-      <button class="btn-enviar">CADASTRAR</button>
+      <button @click="register">Cadastrar</button>
+      <p v-if="errorMessage">{{ errorMessage }}</p>
+      <p v-if="successMessage">{{ successMessage }}</p>
 
 
       <p>Ja se cadastrou? <RouterLink to="/login">clique aqui</RouterLink></p>
