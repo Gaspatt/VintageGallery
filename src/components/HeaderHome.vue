@@ -139,6 +139,7 @@ header {
   display: flex;
   align-items: center;
   background-color: #000;
+  box-shadow: rgba(243, 243, 245, 0.2) 0px 7px 29px 0px;
   height: 50px;
   padding: 40px;
   transition: 1s;
@@ -158,7 +159,7 @@ header {
 .btn {
   display: flex;
   align-items: center;
-  justify-content: center; /* Centraliza o texto no botão */
+  justify-content: center;
   font-weight: bold;
   background-color: #fff;
   color: #000;
@@ -405,6 +406,7 @@ header {
   .nav-1.transparent,
   .nav-2.transparent {
     background-color: transparent;
+    box-shadow: none
   }
 }
 
