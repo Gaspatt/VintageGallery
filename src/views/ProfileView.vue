@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue';
+
 import { useRouter } from 'vue-router';
 import { supabase } from '../supabase';
 import { useAuth } from '../auth';
@@ -18,6 +18,9 @@ async function logout() {
 </script>
 
 <template>
+      <RouterLink to="/">
+      <button class="back"><i class="fas fa-arrow-left"></i></button>
+    </RouterLink>
   <div class="container">
     <h1>PERFIL</h1>
     <P>Suas informações de usuarios abaixo:</P>
@@ -46,6 +49,7 @@ async function logout() {
   align-items: center;
   justify-content: center;
   height: 100vh;
+  animation: slideUp 2s ease-out;
 
 }
 
@@ -55,21 +59,27 @@ i {
 }
 
 .input1 {
-  margin-top: 30px;
-  background-color: rgb(214, 214, 214);
-  font-size: 15pt;
-  padding: 5px;
-  width: 500px;
-  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: rgb(214, 213, 213);
+  color: rgb(0, 0, 0);
+  border-radius: 10px;
+  padding: 10px;
+  gap: 10px;
+  margin-top: 50px
 }
 
 .input {
 
-  background-color: rgb(214, 214, 214);
-  font-size: 15pt;
-  padding: 5px;
-  width: 500px;
-  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: rgb(214, 213, 213);
+  color: rgb(0, 0, 0);
+  border-radius: 10px;
+  padding: 10px;
+  gap: 10px;
 }
 
 button {
@@ -89,6 +99,48 @@ button {
 
 button:hover {
   background-color: rgb(65, 64, 64);
+}
+
+.back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  border: none;
+  color: #ffffff;
+  background-color: #000000;
+  border-radius: 50%;
+  position: absolute;
+
+  left: 10px;
+  transition: 0.3s;
+  font-size: 18px;
+  padding: 0;
+  margin-left: 10px
+}
+
+.back i {
+  font-size: 35px;
+  margin-bottom: 27px;
+}
+
+.back:hover {
+  background: transparent;
+  color: #000000;
+  border: 2px solid #000000;
+}
+
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 </style>
