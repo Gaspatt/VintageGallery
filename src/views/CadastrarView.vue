@@ -1,18 +1,33 @@
 <script setup>
 import { ref } from 'vue';
-import { useUserStore } from '../stores/user';
-import { useRouter } from 'vue-router';
+import { supabase } from '../supabase';
 
 const email = ref('');
 const password = ref('');
-const userStore = useUserStore();
-const router = useRouter();
+const name = ref('');
+const birthdate = ref('');
+const errorMessage = ref('');
+const successMessage = ref('');
 
-function register() {
-  if (userStore.register(email.value, password.value)) {
-    router.push('/');
+async function register() {
+  const { data, error } = await supabase.auth.signUp({
+    email: email.value,
+    password: password.value,
+  });
+
+  if (error) {
+    errorMessage.value = error.message;
   } else {
-    alert('Registration failed');
+    const { error: profileError } = await supabase
+      .from('profiles')
+      .insert([{ id: data.user.id, name: name.value, birthdate: birthdate.value }]);
+
+    if (profileError) {
+      errorMessage.value = profileError.message;
+    } else {
+      successMessage.value = 'Registro bem-sucedido! Você pode fazer login agora.';
+      errorMessage.value = '';
+    }
   }
 }
 </script>
@@ -28,7 +43,7 @@ function register() {
 
       <div class="input-group">
         <i class="fas fa-user icon"></i>
-        <input type="text" name="name" placeholder="Nome:" />
+        <input type="text" name="name" placeholder="Nome" v-model="name" />
       </div>
 
 
@@ -72,11 +87,13 @@ function register() {
 
       <div class="input-group">
         <i class="fas fa-calendar icon"></i>
-        <input type="date" name="birthdate" placeholder="Data de Nascimento" />
+        <input type="date" name="birthdate" placeholder="Data de Nascimento" v-model="birthdate" />
       </div>
 
 
-      <button class="btn-enviar" @click="register">CADASTRAR</button>
+      <button @click="register">Cadastrar</button>
+      <p v-if="errorMessage">{{ errorMessage }}</p>
+      <p v-if="successMessage">{{ successMessage }}</p>
 
 
       <p>Ja se cadastrou? <RouterLink to="/login">clique aqui</RouterLink></p>
