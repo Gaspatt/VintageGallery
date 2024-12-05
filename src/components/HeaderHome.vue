@@ -1,6 +1,9 @@
 <script setup>
 
 import { ref, onMounted } from 'vue';
+import { useAuth } from '../auth';
+
+const { user } = useAuth();
 
 const isMenuActive = ref(false);
 const isTransparent = ref(true);
@@ -97,8 +100,10 @@ onMounted(() => {
         </div>
 
 
-        <button @click="btnlogin" class="btn"><router-link to="/login"
-            class="nav-link-login">LOGIN</router-link></button>
+            <RouterLink v-if="!user" to="/login" class="nav-link-login btn">LOGIN</RouterLink>
+        <RouterLink v-else to="/profile">
+          <i class="fas fa-user"></i>
+        </RouterLink>
       </div>
 
 
@@ -134,6 +139,7 @@ header {
   display: flex;
   align-items: center;
   background-color: #000;
+  box-shadow: rgba(148, 148, 150, 0.2) 0px 7px 29px 0px;
   height: 50px;
   padding: 40px;
   transition: 1s;
@@ -153,7 +159,7 @@ header {
 .btn {
   display: flex;
   align-items: center;
-  justify-content: center; /* Centraliza o texto no botão */
+  justify-content: center;
   font-weight: bold;
   background-color: #fff;
   color: #000;
@@ -400,6 +406,7 @@ header {
   .nav-1.transparent,
   .nav-2.transparent {
     background-color: transparent;
+    box-shadow: none
   }
 }
 
