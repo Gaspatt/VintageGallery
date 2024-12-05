@@ -1,12 +1,42 @@
 <script setup>
 import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+import { supabase } from '../supabase';
+import { useAuth } from '../auth';
 
 const email = ref('');
 const password = ref('');
 const showPassword = ref(false);
+const errorMessage = ref('');
+const successMessage = ref('');
+const { user } = useAuth();
+
+const router = useRouter();
 
 function togglePasswordVisibility() {
   showPassword.value = !showPassword.value;
+}
+
+async function login() {
+  console.log('Email:', email.value);
+
+  const { data, error } = await supabase.auth.signInWithPassword({
+    email: email.value,
+    password: password.value,
+  });
+
+  if (error) {
+    console.error('Erro ao logar:', error);
+    errorMessage.value = "Senha ou email inválidos";
+  } else {
+    console.log('Login bem sucedido:', data);
+    user.value = data.user;
+    errorMessage.value = '';
+    successMessage.value = "Login bem sucedido";
+    setTimeout(() => {
+      router.push('/');
+    }, 2000); // 2s
+  }
 }
 </script>
 
@@ -26,22 +56,18 @@ function togglePasswordVisibility() {
 
       <div class="input-group">
         <i class="fas fa-lock icon"></i>
-        <input
-          :type="showPassword ? 'text' : 'password'"
-          name="password"
-          placeholder="Senha"
-          v-model="password"
-        />
-        <i
-          :class="showPassword ? 'fas fa-eye-slash icon' : 'fas fa-eye icon'"
-          @click="togglePasswordVisibility"
-          style="cursor: pointer"
-        ></i>
+        <input :type="showPassword ? 'text' : 'password'" name="password" placeholder="Senha" v-model="password" />
+        <button @click="togglePasswordVisibility">
+          <i :class="showPassword ? 'fas fa-eye-slash' : 'fas fa-eye'"></i>
+        </button>
       </div>
 
-      <button class="btn-enviar">CADASTRAR</button>
+      <button @click="login">Login</button>
+      <p v-if="errorMessage" class="error">{{ errorMessage }}</p>
+      <p v-if="successMessage" class="success">{{ successMessage }}</p>
 
-      <p>Não possui cadastro? <RouterLink to="/cadastrar">clique aqui</RouterLink></p>
+      <p>Não possui cadastro? <RouterLink to="/cadastrar">clique aqui</RouterLink>
+      </p>
     </div>
   </div>
 </template>
@@ -61,7 +87,7 @@ function togglePasswordVisibility() {
 }
 
 .back {
-  width: 50px; 
+  width: 50px;
   height: 50px;
   border: none;
   color: #ffffff;
@@ -147,11 +173,19 @@ textarea {
   color: #000000;
 }
 
+.error {
+  color: red;
+}
+.success {
+  color: green;
+}
+
 @keyframes slideUp {
   0% {
     opacity: 0;
     transform: translateY(20px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -205,4 +239,3 @@ textarea {
   }
 }
 </style>
-

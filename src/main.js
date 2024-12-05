@@ -1,5 +1,6 @@
 import './assets/main.css'
-import '@fortawesome/fontawesome-free/css/all.css';
+import '@fortawesome/fontawesome-free/css/all.css'
+import '@fortawesome/fontawesome-free/js/all.js'
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap';
 import 'bootstrap-icons/font/bootstrap-icons.css';

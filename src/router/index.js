@@ -6,6 +6,7 @@ import FavoriteView from '@/views/FavoriteView.vue'
 import LoginView from '@/views/LoginView.vue'
 import CadastrarView from '@/views/CadastrarView.vue'
 import ContactView from '@/views/ContactView.vue'
+import ProfileView from '@/views/ProfileView.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -44,6 +45,11 @@ const router = createRouter({
       path: '/cadastrar',
       name: 'cadastrar',
       component: CadastrarView
+    },
+    {
+      path: '/profile',
+      name: 'perfil',
+      component: ProfileView
     }
   ]
 })

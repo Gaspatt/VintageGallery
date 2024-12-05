@@ -3,6 +3,13 @@ import HeaderPage from '@/components/HeaderPage.vue'
 import FooterHome from '@/components/FooterHome.vue'
 import { useCarStore } from '../stores/carStore'
 import { useRouter } from 'vue-router'
+import CarItem from '@/components/CarItem.vue'
+import { supabase } from '../supabase'
+import { useAuth } from '../auth'
+import { ref } from 'vue'
+
+const { user } = useAuth()
+
 
 const router = useRouter()
 const carStore = useCarStore()
@@ -372,6 +379,28 @@ const cars = [
   },
 ]
 
+const errorMessage = ref('')
+
+async function fetchFavorites() {
+  if (!user.value) return
+
+  const { data, error } = await supabase
+    .from('favorites')
+    .select('car_id')
+    .eq('user_id', user.value.id)
+
+  if (error) {
+    errorMessage.value = error.message
+  } else {
+    const favoriteCarIds = data.map(favorite => favorite.car_id)
+    cars.forEach(car => {
+      car.is_favorited = favoriteCarIds.includes(car.id)
+    })
+  }
+}
+
+fetchFavorites()
+
 const rentCar = car => {
   carStore.selectCar(car)
   router.push(`/car/${car.id}`)
@@ -384,21 +413,12 @@ const rentCar = car => {
   <main>
     <div class="conatiner">
       <div class="row carros">
+        <p v-if="errorMessage" class="error">{{ errorMessage }}</p>
         <div class="col-sm-2 uni-carros" v-for="car in cars" :key="car.id">
-          <img :src="car.image" :alt="car.name" />
-          <span class="favorite-icon"><i class="fas fa-heart"></i></span>
-          <div class="textocarro">
-            <span>{{ car.name }}</span>
-            <ul>
-              <li><i class="bi bi-gear-fill"></i>{{ car.brand }}</li>
-              <li><i class="bi bi-speedometer"></i>{{ car.year }}</li>
-            </ul>
-            <div class="botaocarro">
-              <button class="btn btn-dark botao-carro" @click="rentCar(car)">
-                Alugar
-              </button>
-            </div>
-          </div>
+          <CarItem :car="car" />
+          <button class="btn btn-dark botao-carro" @click="rentCar(car)">
+            Alugar
+          </button>
         </div>
       </div>
     </div>
@@ -432,6 +452,11 @@ const rentCar = car => {
   margin-top: 10vh;
   margin-bottom: 15vh;
   text-align: center;
+}
+
+.favorite-icon {
+  border: none;
+  background: none;
 }
 
 .botao-carro {
