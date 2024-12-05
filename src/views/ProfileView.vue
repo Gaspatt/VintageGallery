@@ -44,6 +44,11 @@ async function logout() {
 
 <style scoped>
 
+.fa-user {
+  width: 100px;
+  height: 100px;
+}
+
 .container {
   display: flex;
   align-items: center;
