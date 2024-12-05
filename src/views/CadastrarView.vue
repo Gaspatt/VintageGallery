@@ -117,7 +117,7 @@ async function register() {
 }
 
 .back {
-  width: 50px; /* Reduzi o tamanho para telas menores */
+  width: 50px;
   height: 50px;
   border: none;
   color: #ffffff;
