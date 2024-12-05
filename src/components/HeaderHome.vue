@@ -126,6 +126,10 @@ onMounted(() => {
 <style scoped>
 /*header fixo*/
 
+.fa-user {
+  color: #fff;
+}
+
 header {
   position: fixed;
   top: 0;

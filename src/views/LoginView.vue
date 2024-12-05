@@ -57,12 +57,12 @@ async function login() {
       <div class="input-group">
         <i class="fas fa-lock icon"></i>
         <input :type="showPassword ? 'text' : 'password'" name="password" placeholder="Senha" v-model="password" />
-        <button @click="togglePasswordVisibility">
+        <button @click="togglePasswordVisibility" class="btn">
           <i :class="showPassword ? 'fas fa-eye-slash' : 'fas fa-eye'"></i>
         </button>
       </div>
 
-      <button @click="login">Login</button>
+      <button @click="login" class="btn-enviar">Login</button>
       <p v-if="errorMessage" class="error">{{ errorMessage }}</p>
       <p v-if="successMessage" class="success">{{ successMessage }}</p>
 
@@ -164,6 +164,17 @@ textarea {
 
 .btn-enviar:hover {
   background-color: rgb(95, 95, 95);
+}
+
+.btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
 }
 
 .title {

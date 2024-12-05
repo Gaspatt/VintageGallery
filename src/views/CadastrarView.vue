@@ -8,6 +8,16 @@ const name = ref('');
 const birthdate = ref('');
 const errorMessage = ref('');
 const successMessage = ref('');
+const showPassword = ref(false);
+const showConfirmPassword = ref(false);
+
+function togglePasswordVisibility() {
+  showPassword.value = !showPassword.value;
+}
+
+function toggleConfirmPasswordVisibility() {
+  showConfirmPassword.value = !showConfirmPassword.value;
+}
 
 async function register() {
   const { data, error } = await supabase.auth.signUp({
@@ -55,34 +65,20 @@ async function register() {
 
       <div class="input-group">
         <i class="fas fa-lock icon"></i>
-        <input
-          type="password"
-          name="password"
-          placeholder="Senha"
-          v-model="password"
-        />
-        <i
-          :class="showPassword ? 'fas fa-eye-slash icon' : 'fas fa-eye icon'"
-          @click="togglePasswordVisibility"
-          style="cursor: pointer"
-        ></i>
+        <input :type="showPassword ? 'text' : 'password'" name="password" placeholder="Senha" v-model="password" />
+        <button @click="togglePasswordVisibility" class="btn">
+          <i :class="showPassword ? 'fas fa-eye-slash' : 'fas fa-eye'"></i>
+        </button>
       </div>
 
 
-      <div class="input-group">
+      <!-- <div class="input-group">
         <i class="fas fa-lock icon"></i>
-        <input
-          :type="showConfirmPassword ? 'text' : 'password'"
-          name="Confirmpassword"
-          placeholder="Confirma Senha"
-
-        />
-        <i
-          :class="showConfirmPassword ? 'fas fa-eye-slash icon' : 'fas fa-eye icon'"
-          @click="toggleConfirmPasswordVisibility"
-          style="cursor: pointer"
-        ></i>
-      </div>
+        <input :type="showConfirmPassword ? 'text' : 'password'" name="Confirmpassword" placeholder="Confirmar Senha" v-model="password" />
+        <button @click="toggleConfirmPasswordVisibility" class="btn">
+          <i :class="showConfirmPassword ? 'fas fa-eye-slash' : 'fas fa-eye'"></i>
+        </button>
+      </div> -->
 
 
       <div class="input-group">
@@ -91,7 +87,7 @@ async function register() {
       </div>
 
 
-      <button @click="register">Cadastrar</button>
+      <button @click="register" class="btn-enviar">Cadastrar</button>
       <p v-if="errorMessage">{{ errorMessage }}</p>
       <p v-if="successMessage">{{ successMessage }}</p>
 
@@ -194,6 +190,17 @@ textarea {
 
 .btn-enviar:hover {
   background-color: rgb(95, 95, 95);
+}
+
+.btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
 }
 
 .title {

@@ -9,7 +9,7 @@ const router = useRouter();
 const carStore = useCarStore();
 
 const cars = [
-  {
+{
     id: 1,
     name: '1978 Volkswagen Passat TS',
     brand: 'Volkswagen',
@@ -21,10 +21,13 @@ const cars = [
     km: '25.372',
     location: 'São Paulo',
     price: 'R$ 5.000,00',
-    image: '/src/assets/imagens/carroprin1.png',
-    description: 'O 1978 Volkswagen Passat TS é um dos ícones mais marcantes da história automotiva brasileira, combinando um design arrojado com o desempenho que conquistou gerações de entusiastas. Este exemplar na clássica cor vermelha com interior preto destaca-se como uma verdadeira peça de colecionador, representando a era de ouro dos esportivos nacionais.',
-    specifications: 'O Passat TS é famoso por suas linhas angulares e seu design esportivo. Além disso, a cor vermelha vibrante deste exemplar destaca ainda mais suas formas agressivas e elegantes, conferindo-lhe uma presença marcante nas ruas. Ademais, os detalhes cromados, junto com as rodas clássicas, completam o visual, tornando este Passat uma verdadeira máquina do tempo.',
-    interior: 'O interior preto deste Passat TS é um reflexo da sofisticação e esportividade da época. Com bancos confortáveis e estofamento bem preservado, o interior oferece uma experiência agradável para motorista e passageiros. O painel de instrumentos clássico do TS, com seus mostradores analógicos, mantém toda a funcionalidade, entregando ao motorista as informações necessárias de maneira simples e direta.',
+    image: new URL('@/assets/imagens/carroprin1.png', import.meta.url).href,
+    description:
+      'O 1978 Volkswagen Passat TS é um dos ícones mais marcantes da história automotiva brasileira, combinando um design arrojado com o desempenho que conquistou gerações de entusiastas. Este exemplar na clássica cor vermelha com interior preto destaca-se como uma verdadeira peça de colecionador, representando a era de ouro dos esportivos nacionais.',
+    specifications:
+      'O Passat TS é famoso por suas linhas angulares e seu design esportivo. Além disso, a cor vermelha vibrante deste exemplar destaca ainda mais suas formas agressivas e elegantes, conferindo-lhe uma presença marcante nas ruas. Ademais, os detalhes cromados, junto com as rodas clássicas, completam o visual, tornando este Passat uma verdadeira máquina do tempo.',
+    interior:
+      'O interior preto deste Passat TS é um reflexo da sofisticação e esportividade da época. Com bancos confortáveis e estofamento bem preservado, o interior oferece uma experiência agradável para motorista e passageiros. O painel de instrumentos clássico do TS, com seus mostradores analógicos, mantém toda a funcionalidade, entregando ao motorista as informações necessárias de maneira simples e direta.',
     photos: [
       '/src/assets/imagens/carro1_interior1.png',
       '/src/assets/imagens/carro1_interior2.png',
@@ -42,10 +45,13 @@ const cars = [
     km: '100.000',
     location: 'São Paulo',
     price: 'R$ 1.590.000,00',
-    image: '/src/assets/imagens/carroprin2.png',
-    description: 'O 1978 Volkswagen Passat TS é um dos ícones mais marcantes da história automotiva brasileira, combinando um design arrojado com o desempenho que conquistou gerações de entusiastas. Este exemplar na clássica cor vermelha com interior preto destaca-se como uma verdadeira peça de colecionador, representando a era de ouro dos esportivos nacionais.',
-    specifications: 'O Passat TS é famoso por suas linhas angulares e seu design esportivo. Além disso, a cor vermelha vibrante deste exemplar destaca ainda mais suas formas agressivas e elegantes, conferindo-lhe uma presença marcante nas ruas. Ademais, os detalhes cromados, junto com as rodas clássicas, completam o visual, tornando este Passat uma verdadeira máquina do tempo.',
-    interior: 'O interior preto deste Passat TS é um reflexo da sofisticação e esportividade da época. Com bancos confortáveis e estofamento bem preservado, o interior oferece uma experiência agradável para motorista e passageiros. O painel de instrumentos clássico do TS, com seus mostradores analógicos, mantém toda a funcionalidade, entregando ao motorista as informações necessárias de maneira simples e direta.',
+    image: new URL('@/assets/imagens/carroprin2.png', import.meta.url).href,
+    description:
+      'O 1978 Volkswagen Passat TS é um dos ícones mais marcantes da história automotiva brasileira, combinando um design arrojado com o desempenho que conquistou gerações de entusiastas. Este exemplar na clássica cor vermelha com interior preto destaca-se como uma verdadeira peça de colecionador, representando a era de ouro dos esportivos nacionais.',
+    specifications:
+      'O Passat TS é famoso por suas linhas angulares e seu design esportivo. Além disso, a cor vermelha vibrante deste exemplar destaca ainda mais suas formas agressivas e elegantes, conferindo-lhe uma presença marcante nas ruas. Ademais, os detalhes cromados, junto com as rodas clássicas, completam o visual, tornando este Passat uma verdadeira máquina do tempo.',
+    interior:
+      'O interior preto deste Passat TS é um reflexo da sofisticação e esportividade da época. Com bancos confortáveis e estofamento bem preservado, o interior oferece uma experiência agradável para motorista e passageiros. O painel de instrumentos clássico do TS, com seus mostradores analógicos, mantém toda a funcionalidade, entregando ao motorista as informações necessárias de maneira simples e direta.',
     photos: [
       '/src/assets/imagens/carro2_interior1.png',
       '/src/assets/imagens/carro2_interior2.png',
@@ -64,10 +70,13 @@ const cars = [
     km: '10.235',
     location: 'São Paulo',
     price: 'R$ 1.100.000,00',
-    image: '/src/assets/imagens/carroprin3.jpg',
-    description: 'O 1978 Volkswagen Passat TS é um dos ícones mais marcantes da história automotiva brasileira, combinando um design arrojado com o desempenho que conquistou gerações de entusiastas. Este exemplar na clássica cor vermelha com interior preto destaca-se como uma verdadeira peça de colecionador, representando a era de ouro dos esportivos nacionais.',
-    specifications: 'O Passat TS é famoso por suas linhas angulares e seu design esportivo. Além disso, a cor vermelha vibrante deste exemplar destaca ainda mais suas formas agressivas e elegantes, conferindo-lhe uma presença marcante nas ruas. Ademais, os detalhes cromados, junto com as rodas clássicas, completam o visual, tornando este Passat uma verdadeira máquina do tempo.',
-    interior: 'O interior preto deste Passat TS é um reflexo da sofisticação e esportividade da época. Com bancos confortáveis e estofamento bem preservado, o interior oferece uma experiência agradável para motorista e passageiros. O painel de instrumentos clássico do TS, com seus mostradores analógicos, mantém toda a funcionalidade, entregando ao motorista as informações necessárias de maneira simples e direta.',
+    image: new URL('@/assets/imagens/carroprin3.jpg', import.meta.url).href,
+    description:
+      'O 1978 Volkswagen Passat TS é um dos ícones mais marcantes da história automotiva brasileira, combinando um design arrojado com o desempenho que conquistou gerações de entusiastas. Este exemplar na clássica cor vermelha com interior preto destaca-se como uma verdadeira peça de colecionador, representando a era de ouro dos esportivos nacionais.',
+    specifications:
+      'O Passat TS é famoso por suas linhas angulares e seu design esportivo. Além disso, a cor vermelha vibrante deste exemplar destaca ainda mais suas formas agressivas e elegantes, conferindo-lhe uma presença marcante nas ruas. Ademais, os detalhes cromados, junto com as rodas clássicas, completam o visual, tornando este Passat uma verdadeira máquina do tempo.',
+    interior:
+      'O interior preto deste Passat TS é um reflexo da sofisticação e esportividade da época. Com bancos confortáveis e estofamento bem preservado, o interior oferece uma experiência agradável para motorista e passageiros. O painel de instrumentos clássico do TS, com seus mostradores analógicos, mantém toda a funcionalidade, entregando ao motorista as informações necessárias de maneira simples e direta.',
     photos: [
       '/src/assets/imagens/carro3_interior1.png',
       '/src/assets/imagens/carro3_interior2.png',
@@ -85,10 +94,13 @@ const cars = [
     km: '35.000',
     location: 'São Paulo',
     price: 'R$ 1.050.000,00',
-    image: '/src/assets/imagens/carroprin4.jpg',
-    description: 'O 1978 Volkswagen Passat TS é um dos ícones mais marcantes da história automotiva brasileira, combinando um design arrojado com o desempenho que conquistou gerações de entusiastas. Este exemplar na clássica cor vermelha com interior preto destaca-se como uma verdadeira peça de colecionador, representando a era de ouro dos esportivos nacionais.',
-    specifications: 'O Passat TS é famoso por suas linhas angulares e seu design esportivo. Além disso, a cor vermelha vibrante deste exemplar destaca ainda mais suas formas agressivas e elegantes, conferindo-lhe uma presença marcante nas ruas. Ademais, os detalhes cromados, junto com as rodas clássicas, completam o visual, tornando este Passat uma verdadeira máquina do tempo.',
-    interior: 'O interior preto deste Passat TS é um reflexo da sofisticação e esportividade da época. Com bancos confortáveis e estofamento bem preservado, o interior oferece uma experiência agradável para motorista e passageiros. O painel de instrumentos clássico do TS, com seus mostradores analógicos, mantém toda a funcionalidade, entregando ao motorista as informações necessárias de maneira simples e direta.',
+        image: new URL('@/assets/imagens/carroprin4.jpg', import.meta.url).href,
+    description:
+      'O 1978 Volkswagen Passat TS é um dos ícones mais marcantes da história automotiva brasileira, combinando um design arrojado com o desempenho que conquistou gerações de entusiastas. Este exemplar na clássica cor vermelha com interior preto destaca-se como uma verdadeira peça de colecionador, representando a era de ouro dos esportivos nacionais.',
+    specifications:
+      'O Passat TS é famoso por suas linhas angulares e seu design esportivo. Além disso, a cor vermelha vibrante deste exemplar destaca ainda mais suas formas agressivas e elegantes, conferindo-lhe uma presença marcante nas ruas. Ademais, os detalhes cromados, junto com as rodas clássicas, completam o visual, tornando este Passat uma verdadeira máquina do tempo.',
+    interior:
+      'O interior preto deste Passat TS é um reflexo da sofisticação e esportividade da época. Com bancos confortáveis e estofamento bem preservado, o interior oferece uma experiência agradável para motorista e passageiros. O painel de instrumentos clássico do TS, com seus mostradores analógicos, mantém toda a funcionalidade, entregando ao motorista as informações necessárias de maneira simples e direta.',
     photos: [
       '/src/assets/imagens/carro4_interior1.png',
       '/src/assets/imagens/carro4_interior2.png',
@@ -106,10 +118,13 @@ const cars = [
     km: '22.000',
     location: 'São Paulo',
     price: 'R$ 105.000,00',
-    image: '/src/assets/imagens/carroprin5.jpg',
-    description: 'O 1978 Volkswagen Passat TS é um dos ícones mais marcantes da história automotiva brasileira, combinando um design arrojado com o desempenho que conquistou gerações de entusiastas. Este exemplar na clássica cor vermelha com interior preto destaca-se como uma verdadeira peça de colecionador, representando a era de ouro dos esportivos nacionais.',
-    specifications: 'O Passat TS é famoso por suas linhas angulares e seu design esportivo. Além disso, a cor vermelha vibrante deste exemplar destaca ainda mais suas formas agressivas e elegantes, conferindo-lhe uma presença marcante nas ruas. Ademais, os detalhes cromados, junto com as rodas clássicas, completam o visual, tornando este Passat uma verdadeira máquina do tempo.',
-    interior: 'O interior preto deste Passat TS é um reflexo da sofisticação e esportividade da época. Com bancos confortáveis e estofamento bem preservado, o interior oferece uma experiência agradável para motorista e passageiros. O painel de instrumentos clássico do TS, com seus mostradores analógicos, mantém toda a funcionalidade, entregando ao motorista as informações necessárias de maneira simples e direta.',
+        image: new URL('@/assets/imagens/carroprin5.jpg', import.meta.url).href,
+    description:
+      'O 1978 Volkswagen Passat TS é um dos ícones mais marcantes da história automotiva brasileira, combinando um design arrojado com o desempenho que conquistou gerações de entusiastas. Este exemplar na clássica cor vermelha com interior preto destaca-se como uma verdadeira peça de colecionador, representando a era de ouro dos esportivos nacionais.',
+    specifications:
+      'O Passat TS é famoso por suas linhas angulares e seu design esportivo. Além disso, a cor vermelha vibrante deste exemplar destaca ainda mais suas formas agressivas e elegantes, conferindo-lhe uma presença marcante nas ruas. Ademais, os detalhes cromados, junto com as rodas clássicas, completam o visual, tornando este Passat uma verdadeira máquina do tempo.',
+    interior:
+      'O interior preto deste Passat TS é um reflexo da sofisticação e esportividade da época. Com bancos confortáveis e estofamento bem preservado, o interior oferece uma experiência agradável para motorista e passageiros. O painel de instrumentos clássico do TS, com seus mostradores analógicos, mantém toda a funcionalidade, entregando ao motorista as informações necessárias de maneira simples e direta.',
     photos: [
       '/src/assets/imagens/carro5_interior1.png',
       '/src/assets/imagens/carro5_interior2.png',
@@ -127,10 +142,13 @@ const cars = [
     km: '25.372',
     location: 'São Paulo',
     price: 'R$ 5.000,00',
-    image: '/src/assets/imagens/carroprin6.png',
-    description: 'O 1978 Volkswagen Passat TS é um dos ícones mais marcantes da história automotiva brasileira, combinando um design arrojado com o desempenho que conquistou gerações de entusiastas. Este exemplar na clássica cor vermelha com interior preto destaca-se como uma verdadeira peça de colecionador, representando a era de ouro dos esportivos nacionais.',
-    specifications: 'O Passat TS é famoso por suas linhas angulares e seu design esportivo. Além disso, a cor vermelha vibrante deste exemplar destaca ainda mais suas formas agressivas e elegantes, conferindo-lhe uma presença marcante nas ruas. Ademais, os detalhes cromados, junto com as rodas clássicas, completam o visual, tornando este Passat uma verdadeira máquina do tempo.',
-    interior: 'O interior preto deste Passat TS é um reflexo da sofisticação e esportividade da época. Com bancos confortáveis e estofamento bem preservado, o interior oferece uma experiência agradável para motorista e passageiros. O painel de instrumentos clássico do TS, com seus mostradores analógicos, mantém toda a funcionalidade, entregando ao motorista as informações necessárias de maneira simples e direta.',
+        image: new URL('@/assets/imagens/carroprin6.png', import.meta.url).href,
+    description:
+      'O 1978 Volkswagen Passat TS é um dos ícones mais marcantes da história automotiva brasileira, combinando um design arrojado com o desempenho que conquistou gerações de entusiastas. Este exemplar na clássica cor vermelha com interior preto destaca-se como uma verdadeira peça de colecionador, representando a era de ouro dos esportivos nacionais.',
+    specifications:
+      'O Passat TS é famoso por suas linhas angulares e seu design esportivo. Além disso, a cor vermelha vibrante deste exemplar destaca ainda mais suas formas agressivas e elegantes, conferindo-lhe uma presença marcante nas ruas. Ademais, os detalhes cromados, junto com as rodas clássicas, completam o visual, tornando este Passat uma verdadeira máquina do tempo.',
+    interior:
+      'O interior preto deste Passat TS é um reflexo da sofisticação e esportividade da época. Com bancos confortáveis e estofamento bem preservado, o interior oferece uma experiência agradável para motorista e passageiros. O painel de instrumentos clássico do TS, com seus mostradores analógicos, mantém toda a funcionalidade, entregando ao motorista as informações necessárias de maneira simples e direta.',
     photos: [
       '/src/assets/imagens/carro1_interior1.png',
       '/src/assets/imagens/carro1_interior2.png',
@@ -148,10 +166,13 @@ const cars = [
     km: '100.000',
     location: 'São Paulo',
     price: 'R$ 1.590.000,00',
-    image: '/src/assets/imagens/carroprin7.png',
-    description: 'O 1978 Volkswagen Passat TS é um dos ícones mais marcantes da história automotiva brasileira, combinando um design arrojado com o desempenho que conquistou gerações de entusiastas. Este exemplar na clássica cor vermelha com interior preto destaca-se como uma verdadeira peça de colecionador, representando a era de ouro dos esportivos nacionais.',
-    specifications: 'O Passat TS é famoso por suas linhas angulares e seu design esportivo. Além disso, a cor vermelha vibrante deste exemplar destaca ainda mais suas formas agressivas e elegantes, conferindo-lhe uma presença marcante nas ruas. Ademais, os detalhes cromados, junto com as rodas clássicas, completam o visual, tornando este Passat uma verdadeira máquina do tempo.',
-    interior: 'O interior preto deste Passat TS é um reflexo da sofisticação e esportividade da época. Com bancos confortáveis e estofamento bem preservado, o interior oferece uma experiência agradável para motorista e passageiros. O painel de instrumentos clássico do TS, com seus mostradores analógicos, mantém toda a funcionalidade, entregando ao motorista as informações necessárias de maneira simples e direta.',
+        image: new URL('@/assets/imagens/carroprin7.png', import.meta.url).href,
+    description:
+      'O 1978 Volkswagen Passat TS é um dos ícones mais marcantes da história automotiva brasileira, combinando um design arrojado com o desempenho que conquistou gerações de entusiastas. Este exemplar na clássica cor vermelha com interior preto destaca-se como uma verdadeira peça de colecionador, representando a era de ouro dos esportivos nacionais.',
+    specifications:
+      'O Passat TS é famoso por suas linhas angulares e seu design esportivo. Além disso, a cor vermelha vibrante deste exemplar destaca ainda mais suas formas agressivas e elegantes, conferindo-lhe uma presença marcante nas ruas. Ademais, os detalhes cromados, junto com as rodas clássicas, completam o visual, tornando este Passat uma verdadeira máquina do tempo.',
+    interior:
+      'O interior preto deste Passat TS é um reflexo da sofisticação e esportividade da época. Com bancos confortáveis e estofamento bem preservado, o interior oferece uma experiência agradável para motorista e passageiros. O painel de instrumentos clássico do TS, com seus mostradores analógicos, mantém toda a funcionalidade, entregando ao motorista as informações necessárias de maneira simples e direta.',
     photos: [
       '/src/assets/imagens/carro2_interior1.png',
       '/src/assets/imagens/carro2_interior2.png',
@@ -170,10 +191,13 @@ const cars = [
     km: '10.235',
     location: 'São Paulo',
     price: 'R$ 1.100.000,00',
-    image: '/src/assets/imagens/carroprin8.png',
-    description: 'O 1978 Volkswagen Passat TS é um dos ícones mais marcantes da história automotiva brasileira, combinando um design arrojado com o desempenho que conquistou gerações de entusiastas. Este exemplar na clássica cor vermelha com interior preto destaca-se como uma verdadeira peça de colecionador, representando a era de ouro dos esportivos nacionais.',
-    specifications: 'O Passat TS é famoso por suas linhas angulares e seu design esportivo. Além disso, a cor vermelha vibrante deste exemplar destaca ainda mais suas formas agressivas e elegantes, conferindo-lhe uma presença marcante nas ruas. Ademais, os detalhes cromados, junto com as rodas clássicas, completam o visual, tornando este Passat uma verdadeira máquina do tempo.',
-    interior: 'O interior preto deste Passat TS é um reflexo da sofisticação e esportividade da época. Com bancos confortáveis e estofamento bem preservado, o interior oferece uma experiência agradável para motorista e passageiros. O painel de instrumentos clássico do TS, com seus mostradores analógicos, mantém toda a funcionalidade, entregando ao motorista as informações necessárias de maneira simples e direta.',
+        image: new URL('@/assets/imagens/carroprin8.png', import.meta.url).href,
+    description:
+      'O 1978 Volkswagen Passat TS é um dos ícones mais marcantes da história automotiva brasileira, combinando um design arrojado com o desempenho que conquistou gerações de entusiastas. Este exemplar na clássica cor vermelha com interior preto destaca-se como uma verdadeira peça de colecionador, representando a era de ouro dos esportivos nacionais.',
+    specifications:
+      'O Passat TS é famoso por suas linhas angulares e seu design esportivo. Além disso, a cor vermelha vibrante deste exemplar destaca ainda mais suas formas agressivas e elegantes, conferindo-lhe uma presença marcante nas ruas. Ademais, os detalhes cromados, junto com as rodas clássicas, completam o visual, tornando este Passat uma verdadeira máquina do tempo.',
+    interior:
+      'O interior preto deste Passat TS é um reflexo da sofisticação e esportividade da época. Com bancos confortáveis e estofamento bem preservado, o interior oferece uma experiência agradável para motorista e passageiros. O painel de instrumentos clássico do TS, com seus mostradores analógicos, mantém toda a funcionalidade, entregando ao motorista as informações necessárias de maneira simples e direta.',
     photos: [
       '/src/assets/imagens/carro3_interior1.png',
       '/src/assets/imagens/carro3_interior2.png',
@@ -191,10 +215,13 @@ const cars = [
     km: '35.000',
     location: 'São Paulo',
     price: 'R$ 1.050.000,00',
-    image: '/src/assets/imagens/carroprin9.png',
-    description: 'O 1978 Volkswagen Passat TS é um dos ícones mais marcantes da história automotiva brasileira, combinando um design arrojado com o desempenho que conquistou gerações de entusiastas. Este exemplar na clássica cor vermelha com interior preto destaca-se como uma verdadeira peça de colecionador, representando a era de ouro dos esportivos nacionais.',
-    specifications: 'O Passat TS é famoso por suas linhas angulares e seu design esportivo. Além disso, a cor vermelha vibrante deste exemplar destaca ainda mais suas formas agressivas e elegantes, conferindo-lhe uma presença marcante nas ruas. Ademais, os detalhes cromados, junto com as rodas clássicas, completam o visual, tornando este Passat uma verdadeira máquina do tempo.',
-    interior: 'O interior preto deste Passat TS é um reflexo da sofisticação e esportividade da época. Com bancos confortáveis e estofamento bem preservado, o interior oferece uma experiência agradável para motorista e passageiros. O painel de instrumentos clássico do TS, com seus mostradores analógicos, mantém toda a funcionalidade, entregando ao motorista as informações necessárias de maneira simples e direta.',
+        image: new URL('@/assets/imagens/carroprin9.png', import.meta.url).href,
+    description:
+      'O 1978 Volkswagen Passat TS é um dos ícones mais marcantes da história automotiva brasileira, combinando um design arrojado com o desempenho que conquistou gerações de entusiastas. Este exemplar na clássica cor vermelha com interior preto destaca-se como uma verdadeira peça de colecionador, representando a era de ouro dos esportivos nacionais.',
+    specifications:
+      'O Passat TS é famoso por suas linhas angulares e seu design esportivo. Além disso, a cor vermelha vibrante deste exemplar destaca ainda mais suas formas agressivas e elegantes, conferindo-lhe uma presença marcante nas ruas. Ademais, os detalhes cromados, junto com as rodas clássicas, completam o visual, tornando este Passat uma verdadeira máquina do tempo.',
+    interior:
+      'O interior preto deste Passat TS é um reflexo da sofisticação e esportividade da época. Com bancos confortáveis e estofamento bem preservado, o interior oferece uma experiência agradável para motorista e passageiros. O painel de instrumentos clássico do TS, com seus mostradores analógicos, mantém toda a funcionalidade, entregando ao motorista as informações necessárias de maneira simples e direta.',
     photos: [
       '/src/assets/imagens/carro4_interior1.png',
       '/src/assets/imagens/carro4_interior2.png',
@@ -212,10 +239,13 @@ const cars = [
     km: '22.000',
     location: 'São Paulo',
     price: 'R$ 105.000,00',
-    image: '/src/assets/imagens/carroprin10.png',
-    description: 'O 1978 Volkswagen Passat TS é um dos ícones mais marcantes da história automotiva brasileira, combinando um design arrojado com o desempenho que conquistou gerações de entusiastas. Este exemplar na clássica cor vermelha com interior preto destaca-se como uma verdadeira peça de colecionador, representando a era de ouro dos esportivos nacionais.',
-    specifications: 'O Passat TS é famoso por suas linhas angulares e seu design esportivo. Além disso, a cor vermelha vibrante deste exemplar destaca ainda mais suas formas agressivas e elegantes, conferindo-lhe uma presença marcante nas ruas. Ademais, os detalhes cromados, junto com as rodas clássicas, completam o visual, tornando este Passat uma verdadeira máquina do tempo.',
-    interior: 'O interior preto deste Passat TS é um reflexo da sofisticação e esportividade da época. Com bancos confortáveis e estofamento bem preservado, o interior oferece uma experiência agradável para motorista e passageiros. O painel de instrumentos clássico do TS, com seus mostradores analógicos, mantém toda a funcionalidade, entregando ao motorista as informações necessárias de maneira simples e direta.',
+        image: new URL('@/assets/imagens/carroprin10.png', import.meta.url).href,
+    description:
+      'O 1978 Volkswagen Passat TS é um dos ícones mais marcantes da história automotiva brasileira, combinando um design arrojado com o desempenho que conquistou gerações de entusiastas. Este exemplar na clássica cor vermelha com interior preto destaca-se como uma verdadeira peça de colecionador, representando a era de ouro dos esportivos nacionais.',
+    specifications:
+      'O Passat TS é famoso por suas linhas angulares e seu design esportivo. Além disso, a cor vermelha vibrante deste exemplar destaca ainda mais suas formas agressivas e elegantes, conferindo-lhe uma presença marcante nas ruas. Ademais, os detalhes cromados, junto com as rodas clássicas, completam o visual, tornando este Passat uma verdadeira máquina do tempo.',
+    interior:
+      'O interior preto deste Passat TS é um reflexo da sofisticação e esportividade da época. Com bancos confortáveis e estofamento bem preservado, o interior oferece uma experiência agradável para motorista e passageiros. O painel de instrumentos clássico do TS, com seus mostradores analógicos, mantém toda a funcionalidade, entregando ao motorista as informações necessárias de maneira simples e direta.',
     photos: [
       '/src/assets/imagens/carro5_interior1.png',
       '/src/assets/imagens/carro5_interior2.png',
@@ -243,8 +273,8 @@ const rentCar = (car) => {
   </section>
   <main>
 
-    <div class="carrossel">
-      <swiper-container navigation="true" space-between="670" slides-per-view="3">
+    <div class="carrossel ">
+      <swiper-container navigation="true" space-between="670" slides-per-view="3" loop="true" autoplay-delay="2500" autoplay-disable-on-interaction="false">
         <swiper-slide><img src="/src/assets/imagens/carro2.png" alt="carro1"></swiper-slide>
         <swiper-slide><img src="/src/assets/imagens/carro3.png" alt="carro2"></swiper-slide>
         <swiper-slide><img src="/src/assets/imagens/carro1.png" alt="carro3"></swiper-slide>
@@ -297,6 +327,7 @@ const rentCar = (car) => {
 </template>
 
 <style scoped>
+
 .carros {
   display: flex;
   justify-content: center;
@@ -554,5 +585,9 @@ swiper-slide img {
 h1 i {
   color: rgb(182, 6, 6);
   margin-left: 10px;
+}
+
+.swiper-button-next, .swiper-button-prev svg {
+  color: white;
 }
 </style>

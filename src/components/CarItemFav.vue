@@ -66,7 +66,7 @@ async function toggleFavorite(carId) {
 
 <style scoped>
 .car {
-  margin-bottom: 20px;
+  margin-top: 60px;
 }
 
 .car img {

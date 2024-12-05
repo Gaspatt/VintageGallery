@@ -1,5 +1,31 @@
 <script setup>
 
+import { ref } from 'vue';
+
+const formData = ref({
+  name: '',
+  email: '',
+  title: '',
+  text: '',
+});
+
+const showModal = ref(false);
+
+const handleSubmit = () => {
+
+  showModal.value = true;
+};
+
+const handleModalClose = () => {
+
+  showModal.value = false;
+  formData.value = {
+    name: '',
+    email: '',
+    title: '',
+    text: '',
+  };
+};
 
 </script>
 
@@ -14,32 +40,32 @@
 
       <div class="input-group">
         <i class="fas fa-user icon"></i>
-        <input type="text" name="name" placeholder="Nome:"/>
+        <input type="text" v-model="formData.name" placeholder="Nome:" />
       </div>
-
-
 
       <div class="input-group">
         <i class="fas fa-envelope icon"></i>
-        <input type="email" name="email" placeholder="Email:">
+        <input type="email" v-model="formData.email" placeholder="Email:" />
       </div>
-
-
 
       <div class="input-group">
         <i class="fas fa-tag icon"></i>
-        <input type="text" name="title" placeholder="Assunto:"/>
+        <input type="text" v-model="formData.title" placeholder="Assunto:" />
       </div>
-
-
 
       <div class="input-group">
-        <textarea name="text" placeholder="Fale aqui!"></textarea>
+        <textarea v-model="formData.text" placeholder="Fale aqui!"></textarea>
       </div>
 
+      <button class="btn-enviar" @click="handleSubmit">ENVIAR</button>
+    </div>
 
-
-      <button class="btn-enviar">ENVIAR</button>
+    <!-- Modal -->
+    <div v-if="showModal" class="modal">
+      <div class="modal-content">
+        <p>Mensagem enviada com sucesso!</p>
+        <button @click="handleModalClose">OK</button>
+      </div>
     </div>
   </div>
 </template>
@@ -81,6 +107,8 @@ body {
   transition: 0.3s;
 }
 
+
+
 .back:hover {
   background: transparent;
   color: #000000;
@@ -110,11 +138,7 @@ body {
   gap: 10px;
 }
 
-.error {
-  font-size: 12px;
-  color: red;
 
-}
 
 .icon {
   font-size: 20px;
@@ -161,6 +185,42 @@ textarea {
 
 .btn-enviar:hover {
   background-color: rgb(95, 95, 95);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.modal-content {
+  background: white;
+  padding: 50px;
+  width: 500px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content p {
+  margin: 0 0 10px;
+}
+
+.modal-content button {
+  background: #1a1a1a;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+
 }
 
 

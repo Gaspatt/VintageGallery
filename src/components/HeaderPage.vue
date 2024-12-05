@@ -1,6 +1,9 @@
 <script setup>
 
 import { ref, onMounted } from 'vue';
+import { useAuth } from '../auth';
+
+const { user } = useAuth();
 
 const isMenuActive = ref(false);
 const isTransparent = ref(true);
@@ -72,7 +75,7 @@ onMounted(() => {
         <li class="nav-item">
           <router-link to="/" class="nav-link">HOME</router-link>
         </li>
-         <li class="nav-item">
+        <li class="nav-item">
           <router-link to="/cars" class="nav-link">CARROS</router-link>
         </li>
         <li class="nav-item">
@@ -85,7 +88,8 @@ onMounted(() => {
 
       <div class="elementos">
         <div class="search-container-Desk">
-          <input class="search" type="text" placeholder="Search...">
+          <input class="search" v-model="searchQuery" placeholder="Pesquise..." />
+          <!-- <input class="search" type="text" placeholder="Search..."> -->
           <i class="fas fa-search search-icon"></i>
         </div>
 
@@ -97,8 +101,10 @@ onMounted(() => {
         </div>
 
 
-        <button @click="btnlogin" class="btn"><router-link to="/login"
-            class="nav-link-login">LOGIN</router-link></button>
+            <RouterLink v-if="!user" to="/login" class="nav-link-login btn">LOGIN</RouterLink>
+        <RouterLink v-else to="/profile">
+          <i class="fas fa-user"></i>
+        </RouterLink>
       </div>
 
 
@@ -120,6 +126,10 @@ onMounted(() => {
 <style scoped>
 /*header fixo*/
 
+.fa-user {
+  color: #fff;
+}
+
 header {
   position: fixed;
   top: 0;
@@ -134,6 +144,7 @@ header {
   display: flex;
   align-items: center;
   background-color: #000;
+  box-shadow: rgba(148, 148, 150, 0.2) 0px 7px 29px 0px;
   height: 50px;
   padding: 40px;
   transition: 1s;
@@ -153,7 +164,7 @@ header {
 .btn {
   display: flex;
   align-items: center;
-  justify-content: center; /* Centraliza o texto no botão */
+  justify-content: center;
   font-weight: bold;
   background-color: #fff;
   color: #000;
@@ -224,7 +235,7 @@ header {
 /*nav de baixo*/
 
 .nav-2 {
-  background-color: #292828;
+  background-color: #19191a;
   padding: 10px;
   transition: 0.3s;
 }
@@ -396,6 +407,7 @@ header {
   .nav-menu-lateral {
     display: none;
   }
+
 
 }
 

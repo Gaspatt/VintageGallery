@@ -31,9 +31,9 @@ async function logout() {
 
 
     <div v-if="user">
-      <p class="input1"><strong>Nome:</strong> {{ user.name }}</p>
+      <p class="input1"><strong>Nome:</strong> Pablo Antonio</p>
       <p class="input"><strong>Email:</strong> {{ user.email }}</p>
-      <p class="input"><strong>Data de Nascimento:</strong> {{ user.birthdate }}</p>
+      <p class="input"><strong>Data de Nascimento:</strong> 29/06/2001</p>
       <button @click="logout">DESCONECTAR</button>
     </div>
     <div v-else>
@@ -54,7 +54,7 @@ async function logout() {
 }
 
 i {
-  font-size: 100px;
+  font-size: 200px;
   margin-top: 30px;
 }
 

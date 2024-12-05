@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import { supabase } from '../supabase'
-import CarItem from '@/components/CarItem.vue'
+import CarItemFav from '@/components/CarItemFav.vue'
 import { useAuth } from '../auth'
 import HeaderPage from '@/components/HeaderPage.vue'
 
@@ -112,7 +112,7 @@ fetchFavoriteCars()
     <h1>Favoritos</h1>
     <p v-if="errorMessage" class="error">{{ errorMessage }}</p>
     <div v-for="car in favoriteCars" :key="car.id" class="col-sm-2 uni-carros">
-      <CarItem :car="car" />
+      <CarItemFav :car="car" />
     </div>
   </div>
 </template>

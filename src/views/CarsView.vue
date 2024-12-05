@@ -27,7 +27,7 @@ const cars = [
     km: '25.372',
     location: 'São Paulo',
     price: 'R$ 5.000,00',
-    image: '/src/assets/imagens/carroprin1.png',
+    image: new URL('@/assets/imagens/carroprin1.png', import.meta.url).href,
     description:
       'O 1978 Volkswagen Passat TS é um dos ícones mais marcantes da história automotiva brasileira, combinando um design arrojado com o desempenho que conquistou gerações de entusiastas. Este exemplar na clássica cor vermelha com interior preto destaca-se como uma verdadeira peça de colecionador, representando a era de ouro dos esportivos nacionais.',
     specifications:
@@ -51,7 +51,7 @@ const cars = [
     km: '100.000',
     location: 'São Paulo',
     price: 'R$ 1.590.000,00',
-    image: '/src/assets/imagens/carroprin2.png',
+    image: new URL('@/assets/imagens/carroprin2.png', import.meta.url).href,
     description:
       'O 1978 Volkswagen Passat TS é um dos ícones mais marcantes da história automotiva brasileira, combinando um design arrojado com o desempenho que conquistou gerações de entusiastas. Este exemplar na clássica cor vermelha com interior preto destaca-se como uma verdadeira peça de colecionador, representando a era de ouro dos esportivos nacionais.',
     specifications:
@@ -76,7 +76,7 @@ const cars = [
     km: '10.235',
     location: 'São Paulo',
     price: 'R$ 1.100.000,00',
-    image: '/src/assets/imagens/carroprin3.jpg',
+    image: new URL('@/assets/imagens/carroprin3.jpg', import.meta.url).href,
     description:
       'O 1978 Volkswagen Passat TS é um dos ícones mais marcantes da história automotiva brasileira, combinando um design arrojado com o desempenho que conquistou gerações de entusiastas. Este exemplar na clássica cor vermelha com interior preto destaca-se como uma verdadeira peça de colecionador, representando a era de ouro dos esportivos nacionais.',
     specifications:
@@ -100,7 +100,7 @@ const cars = [
     km: '35.000',
     location: 'São Paulo',
     price: 'R$ 1.050.000,00',
-    image: '/src/assets/imagens/carroprin4.jpg',
+        image: new URL('@/assets/imagens/carroprin4.jpg', import.meta.url).href,
     description:
       'O 1978 Volkswagen Passat TS é um dos ícones mais marcantes da história automotiva brasileira, combinando um design arrojado com o desempenho que conquistou gerações de entusiastas. Este exemplar na clássica cor vermelha com interior preto destaca-se como uma verdadeira peça de colecionador, representando a era de ouro dos esportivos nacionais.',
     specifications:
@@ -124,7 +124,7 @@ const cars = [
     km: '22.000',
     location: 'São Paulo',
     price: 'R$ 105.000,00',
-    image: '/src/assets/imagens/carroprin5.jpg',
+        image: new URL('@/assets/imagens/carroprin5.jpg', import.meta.url).href,
     description:
       'O 1978 Volkswagen Passat TS é um dos ícones mais marcantes da história automotiva brasileira, combinando um design arrojado com o desempenho que conquistou gerações de entusiastas. Este exemplar na clássica cor vermelha com interior preto destaca-se como uma verdadeira peça de colecionador, representando a era de ouro dos esportivos nacionais.',
     specifications:
@@ -148,7 +148,7 @@ const cars = [
     km: '25.372',
     location: 'São Paulo',
     price: 'R$ 5.000,00',
-    image: '/src/assets/imagens/carroprin6.png',
+        image: new URL('@/assets/imagens/carroprin6.png', import.meta.url).href,
     description:
       'O 1978 Volkswagen Passat TS é um dos ícones mais marcantes da história automotiva brasileira, combinando um design arrojado com o desempenho que conquistou gerações de entusiastas. Este exemplar na clássica cor vermelha com interior preto destaca-se como uma verdadeira peça de colecionador, representando a era de ouro dos esportivos nacionais.',
     specifications:
@@ -172,7 +172,7 @@ const cars = [
     km: '100.000',
     location: 'São Paulo',
     price: 'R$ 1.590.000,00',
-    image: '/src/assets/imagens/carroprin7.png',
+        image: new URL('@/assets/imagens/carroprin7.png', import.meta.url).href,
     description:
       'O 1978 Volkswagen Passat TS é um dos ícones mais marcantes da história automotiva brasileira, combinando um design arrojado com o desempenho que conquistou gerações de entusiastas. Este exemplar na clássica cor vermelha com interior preto destaca-se como uma verdadeira peça de colecionador, representando a era de ouro dos esportivos nacionais.',
     specifications:
@@ -197,7 +197,7 @@ const cars = [
     km: '10.235',
     location: 'São Paulo',
     price: 'R$ 1.100.000,00',
-    image: '/src/assets/imagens/carroprin8.png',
+        image: new URL('@/assets/imagens/carroprin8.png', import.meta.url).href,
     description:
       'O 1978 Volkswagen Passat TS é um dos ícones mais marcantes da história automotiva brasileira, combinando um design arrojado com o desempenho que conquistou gerações de entusiastas. Este exemplar na clássica cor vermelha com interior preto destaca-se como uma verdadeira peça de colecionador, representando a era de ouro dos esportivos nacionais.',
     specifications:
@@ -221,7 +221,7 @@ const cars = [
     km: '35.000',
     location: 'São Paulo',
     price: 'R$ 1.050.000,00',
-    image: '/src/assets/imagens/carroprin9.png',
+        image: new URL('@/assets/imagens/carroprin9.png', import.meta.url).href,
     description:
       'O 1978 Volkswagen Passat TS é um dos ícones mais marcantes da história automotiva brasileira, combinando um design arrojado com o desempenho que conquistou gerações de entusiastas. Este exemplar na clássica cor vermelha com interior preto destaca-se como uma verdadeira peça de colecionador, representando a era de ouro dos esportivos nacionais.',
     specifications:
@@ -245,7 +245,7 @@ const cars = [
     km: '22.000',
     location: 'São Paulo',
     price: 'R$ 105.000,00',
-    image: '/src/assets/imagens/carroprin10.png',
+        image: new URL('@/assets/imagens/carroprin10.png', import.meta.url).href,
     description:
       'O 1978 Volkswagen Passat TS é um dos ícones mais marcantes da história automotiva brasileira, combinando um design arrojado com o desempenho que conquistou gerações de entusiastas. Este exemplar na clássica cor vermelha com interior preto destaca-se como uma verdadeira peça de colecionador, representando a era de ouro dos esportivos nacionais.',
     specifications:
@@ -269,7 +269,7 @@ const cars = [
     km: '72.300',
     location: 'São Paulo',
     price: 'R$ 2.000,00',
-    image: '/src/assets/imagens/carro11.png',
+        image: new URL('@/assets/imagens/carro11.png', import.meta.url).href,
     description:
       'O 1979 Toyota Bandeirante é um veículo que personifica a robustez e a durabilidade, características que fizeram dele um ícone nas estradas e trilhas brasileiras. Este modelo, construído para enfrentar qualquer tipo de terreno, é altamente valorizado por entusiastas de carros clássicos e aventureiros que buscam um companheiro de viagem confiável e de fato resistente. Com uma herança que remonta às suas raízes na indústria automobilística, o Toyota Bandeirante certamente continua a impressionar por sua capacidade de enfrentar desafios com confiança e simplicidade.',
     specifications:
@@ -293,7 +293,7 @@ const cars = [
     km: '51.667',
     location: 'São Paulo',
     price: 'R$ 4.500,00',
-    image: '/src/assets/imagens/carro12.png',
+        image: new URL('@/assets/imagens/carro12.png', import.meta.url).href,
     description:
       'O Dodge Charger é um modelo de automóvel comercializado pela Dodge em várias formas ao longo de sete gerações desde 1966. O primeiro Charger foi um show car em 1964. Um carro-conceito Charger II de 1965 lembrava a versão de produção de 1966. O Charger foi construído em três plataformas diferentes em vários tamanhos. Nos Estados Unidos, a placa de identificação Charger foi usada em hatchbacks subcompactos, sedãs de tamanho normal, muscle cars e cupês de luxo pessoais. A versão atual é um sedã de quatro portas.',
     specifications:
@@ -317,7 +317,7 @@ const cars = [
     km: '99.000',
     location: 'São Paulo',
     price: 'R$ 1.250,00',
-    image: '/src/assets/imagens/carro13.png',
+        image: new URL('@/assets/imagens/carro13.png', import.meta.url).href,
     description:
       'Veraneio é um utilitário esportivo (SUV) produzido pela Chevrolet do Brasil de 1964 a 1994 substituindo a Chevrolet Amazona, desenhada por Luther Whitmore Stier, inspirado na Chevrolet Suburban norte-americana.',
     specifications:
@@ -341,7 +341,7 @@ const cars = [
     km: '57.700',
     location: 'São Paulo',
     price: 'R$ 3.000,00',
-    image: '/src/assets/imagens/carro14.png',
+        image: new URL('@/assets/imagens/carro14.png', import.meta.url).href,
     description:
       'O Volkswagen Kombi foi um veículo comercial ligeiro produzido pela empresa automotiva alemã Volkswagen, entre 1950 e 2013. Sua construção robusta monobloco (sem chassi), suspensão independente com barras de torção, além da excêntrica posição do motorista no automóvel (sentado sobre o eixo dianteiro e com a coluna de direção praticamente vertical), o tornam um veículo simples e robusto, de baixo custo de manutenção.',
     specifications:
@@ -365,7 +365,7 @@ const cars = [
     km: '1.140',
     location: 'São Paulo',
     price: 'R$ 1.200,00',
-    image: '/src/assets/imagens/carro15.png',
+        image: new URL('@/assets/imagens/carro15.png', import.meta.url).href,
     description:
       'A linha Volkswagen 1600 foi, juntamente com o Fusca e a Kombi, a base da presença da Volkswagen no mercado brasileiro até a chegada do Passat, em 1974. Todos eram equipados com motores traseiros refrigerados a ar e mesma plataforma mecânica do Fusca. Possuía uma fácil adaptação para sistemas de sobrealimentação, seja com turbocompressores ou superchargers (compressores).',
     specifications:
