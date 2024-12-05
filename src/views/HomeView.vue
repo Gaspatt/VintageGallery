@@ -283,6 +283,10 @@ const rentCar = (car) => {
 
     </div>
 
+    <h1 class="title-loc">CONHEÇA O NOSSO LOCAL <i class="fa-solid fa-location-dot"></i></h1>
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3573.8823706762696!2d-48.74088992530028!3d-26.394987671769965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94deb5609af7afc5%3A0x34c75ce16022aa6a!2sInstituto%20Federal%20Catarinense%20Campus%20Araquari!5e0!3m2!1spt-BR!2sbr!4v1733358649082!5m2!1spt-BR!2sbr" class="map" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
 
   </main>
   <FooterHome />
@@ -532,6 +536,19 @@ swiper-slide img {
 
 .carrossel {
   height: 600px;
+}
+
+.title-loc {
+  font-size: 22pt;
+  font-weight: bold;
+  margin-bottom: 50px;
+  text-align: center;
+
+}
+
+h1 i {
+  color: rgb(182, 6, 6);
+  margin-left: 10px;
 }
 
 </style>
