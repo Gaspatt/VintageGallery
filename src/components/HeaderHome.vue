@@ -88,7 +88,8 @@ onMounted(() => {
 
       <div class="elementos">
         <div class="search-container-Desk">
-          <input class="search" type="text" placeholder="Search...">
+          <input class="search" v-model="searchQuery" placeholder="Pesquise..." />
+          <!-- <input class="search" type="text" placeholder="Search..."> -->
           <i class="fas fa-search search-icon"></i>
         </div>
 
