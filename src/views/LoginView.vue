@@ -18,18 +18,20 @@ function togglePasswordVisibility() {
 }
 
 async function login() {
-  console.log('Login function called');
+  console.log('Email:', email.value);
+
   const { data, error } = await supabase.auth.signInWithPassword({
     email: email.value,
     password: password.value,
   });
 
   if (error) {
-    console.error('Login error:', error);
+    console.error('Erro ao logar:', error);
     errorMessage.value = "Senha ou email inválidos";
   } else {
-    console.log('Login successful:', data);
+    console.log('Login bem sucedido:', data);
     user.value = data.user;
+    errorMessage.value = '';
     successMessage.value = "Login bem sucedido";
     setTimeout(() => {
       router.push('/');
